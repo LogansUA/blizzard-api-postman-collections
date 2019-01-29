@@ -1,0 +1,63 @@
+{
+	"id": "9840670c-1699-4f24-8cc9-a06d335df4aa",
+	"values": [
+		{
+			"key": "sc2.season-id",
+			"value": "37",
+			"description": "",
+			"enabled": true
+		},
+		{
+			"key": "sc2.queue-id",
+			"value": "201",
+			"description": "",
+			"enabled": true
+		},
+		{
+			"key": "sc2.item-type-id",
+			"value": "0",
+			"description": "",
+			"enabled": true
+		},
+		{
+			"key": "sc2.league-id",
+			"value": "6",
+			"description": "",
+			"enabled": true
+		},
+		{
+			"key": "sc2.region-id",
+			"value": "1",
+			"description": "",
+			"enabled": true
+		},
+		{
+			"key": "sc2.realm-id",
+			"value": "2",
+			"description": "",
+			"enabled": true
+		},
+		{
+			"key": "sc2.profile-id",
+			"value": "4511",
+			"description": "",
+			"enabled": true
+		},
+		{
+			"key": "sc2.ladder-id",
+			"value": "",
+			"description": "",
+			"enabled": true
+		},
+		{
+			"key": "sc2.account-id",
+			"value": "4511",
+			"description": "",
+			"enabled": true
+		}
+	],
+	"name": "Blizzard API StarCraft II Globals",
+	"_postman_variable_scope": "globals",
+	"_postman_exported_at": "2019-01-29T11:47:54.327Z",
+	"_postman_exported_using": "Postman/6.7.2"
+}

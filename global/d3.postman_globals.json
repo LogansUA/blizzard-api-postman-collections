@@ -1,0 +1,87 @@
+{
+	"id": "9840670c-1699-4f24-8cc9-a06d335df4aa",
+	"values": [
+		{
+			"key": "d3.act-id",
+			"value": "1",
+			"description": "",
+			"enabled": true
+		},
+		{
+			"key": "d3.artisan-slug",
+			"value": "blacksmith",
+			"description": "",
+			"enabled": true
+		},
+		{
+			"key": "d3.recipe-slug",
+			"value": "apprentice-flamberge",
+			"description": "",
+			"enabled": true
+		},
+		{
+			"key": "d3.follower-slug",
+			"value": "templar",
+			"description": "",
+			"enabled": true
+		},
+		{
+			"key": "d3.class-slug",
+			"value": "barbarian",
+			"description": "",
+			"enabled": true
+		},
+		{
+			"key": "d3.skill-slug",
+			"value": "bash",
+			"description": "",
+			"enabled": true
+		},
+		{
+			"key": "d3.item-type-slug",
+			"value": "sword2h",
+			"description": "",
+			"enabled": true
+		},
+		{
+			"key": "d3.item-slug-and-id",
+			"value": "corrupted-ashbringer-Unique_Sword_2H_104_x1",
+			"description": "",
+			"enabled": true
+		},
+		{
+			"key": "d3.profile-battle-tag",
+			"value": "BigDaddyDen#2765",
+			"description": "",
+			"enabled": true
+		},
+		{
+			"key": "d3.profile-hero-id",
+			"value": "73770735",
+			"description": "",
+			"enabled": true
+		},
+		{
+			"key": "d3.season-id",
+			"value": "1",
+			"description": "",
+			"enabled": true
+		},
+		{
+			"key": "d3.leaderboard",
+			"value": "rift-barbarian",
+			"description": "",
+			"enabled": true
+		},
+		{
+			"key": "d3.era-id",
+			"value": "2",
+			"description": "",
+			"enabled": true
+		}
+	],
+	"name": "Blizzard API Diablo III Globals",
+	"_postman_variable_scope": "globals",
+	"_postman_exported_at": "2019-01-29T11:47:54.327Z",
+	"_postman_exported_using": "Postman/6.7.2"
+}
