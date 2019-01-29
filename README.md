@@ -1,0 +1,2 @@
+## Blizzard API Postman Collections
+
