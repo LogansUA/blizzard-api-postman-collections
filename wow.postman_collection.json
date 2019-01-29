@@ -1,0 +1,3745 @@
+{
+	"info": {
+		"_postman_id": "daf805a9-ece4-4e3a-aba3-8a08504e5324",
+		"name": "World of Warcraft",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Community APIs",
+			"item": [
+				{
+					"name": "Achievement API",
+					"item": [
+						{
+							"name": "Achievement",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{access-token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{battle-net-host}}/wow/achievement/{{wow.achievement-id}}?locale={{locale}}&access_token={{access-token}}",
+									"host": [
+										"{{battle-net-host}}"
+									],
+									"path": [
+										"wow",
+										"achievement",
+										"{{wow.achievement-id}}"
+									],
+									"query": [
+										{
+											"key": "locale",
+											"value": "{{locale}}",
+											"description": "The locale to reflect in localized data."
+										},
+										{
+											"key": "access_token",
+											"value": "{{access-token}}"
+										}
+									]
+								},
+								"description": "Returns data about an individual achievement."
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Auction API",
+					"item": [
+						{
+							"name": "Actions Data Status",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{battle-net-host}}/wow/auction/data/{{wow.realm}}?locale={{locale}}&access_token={{access-token}}",
+									"host": [
+										"{{battle-net-host}}"
+									],
+									"path": [
+										"wow",
+										"auction",
+										"data",
+										"{{wow.realm}}"
+									],
+									"query": [
+										{
+											"key": "locale",
+											"value": "{{locale}}",
+											"description": "The locale to reflect in localized data."
+										},
+										{
+											"key": "access_token",
+											"value": "{{access-token}}"
+										}
+									]
+								},
+								"description": "Auction APIs currently provide rolling batches of data about current auctions. Fetching auction dumps is a two-step process that involves checking a per-realm index file to determine if a recent dump has been generated and then fetching the most recently generated dump file (if necessary).\n\nThis API resource provides a per-realm list of recently generated auction house data dumps."
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Boss API",
+					"item": [
+						{
+							"name": "Master List",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{battle-net-host}}/wow/boss/?locale={{locale}}&access_token={{access-token}}",
+									"host": [
+										"{{battle-net-host}}"
+									],
+									"path": [
+										"wow",
+										"boss",
+										""
+									],
+									"query": [
+										{
+											"key": "locale",
+											"value": "{{locale}}",
+											"description": "The locale to reflect in localized data."
+										},
+										{
+											"key": "access_token",
+											"value": "{{access-token}}"
+										}
+									]
+								},
+								"description": "Returns a list of all supported bosses. A \"boss\" in this context should be considered a boss encounter, which may include more than one NPC."
+							},
+							"response": []
+						},
+						{
+							"name": "Boss",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{battle-net-host}}/wow/boss/{{wow.boss-id}}?locale={{locale}}&access_token={{access-token}}",
+									"host": [
+										"{{battle-net-host}}"
+									],
+									"path": [
+										"wow",
+										"boss",
+										"{{wow.boss-id}}"
+									],
+									"query": [
+										{
+											"key": "locale",
+											"value": "{{locale}}",
+											"description": "The locale to reflect in localized data."
+										},
+										{
+											"key": "access_token",
+											"value": "{{access-token}}"
+										}
+									]
+								},
+								"description": "The boss API provides information about bosses. A \"boss\" in this context should be considered a boss encounter, which may include more than one NPC."
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Challenge Mode API",
+					"item": [
+						{
+							"name": "Realm Leaderboard",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{battle-net-host}}/wow/challenge/{{wow.realm}}?locale={{locale}}&access_token={{access-token}}",
+									"host": [
+										"{{battle-net-host}}"
+									],
+									"path": [
+										"wow",
+										"challenge",
+										"{{wow.realm}}"
+									],
+									"query": [
+										{
+											"key": "locale",
+											"value": "{{locale}}",
+											"description": "The locale to reflect in localized data."
+										},
+										{
+											"key": "access_token",
+											"value": "{{access-token}}"
+										}
+									]
+								},
+								"description": "The request returns data for all nine challenge mode maps (currently). The map field includes the current medal times for each dungeon. Each ladder provides data about each character that was part of each run. The character data includes the current cached specialization of the character while the member field includes the specialization of the character during the challenge mode run."
+							},
+							"response": []
+						},
+						{
+							"name": "Region Leaderboard",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{battle-net-host}}/wow/challenge/region?locale={{locale}}&access_token={{access-token}}",
+									"host": [
+										"{{battle-net-host}}"
+									],
+									"path": [
+										"wow",
+										"challenge",
+										"region"
+									],
+									"query": [
+										{
+											"key": "locale",
+											"value": "{{locale}}",
+											"description": "The locale to reflect in localized data."
+										},
+										{
+											"key": "access_token",
+											"value": "{{access-token}}"
+										}
+									]
+								},
+								"description": "The region leaderboard has the exact same data format as the realm leaderboards except there is no realm field. Instead, the response has the top 100 results gathered for each map for all of the available realm leaderboards in a region."
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Character Profile API",
+					"item": [
+						{
+							"name": "Character Profile",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{battle-net-host}}/wow/character/{{wow.realm}}/{{wow.character}}?fields=&locale={{locale}}&access_token={{access-token}}",
+									"host": [
+										"{{battle-net-host}}"
+									],
+									"path": [
+										"wow",
+										"character",
+										"{{wow.realm}}",
+										"{{wow.character}}"
+									],
+									"query": [
+										{
+											"key": "fields",
+											"value": "",
+											"description": "Returns a basic dataset of character data."
+										},
+										{
+											"key": "locale",
+											"value": "{{locale}}",
+											"description": "The locale to reflect in localized data."
+										},
+										{
+											"key": "access_token",
+											"value": "{{access-token}}"
+										}
+									]
+								},
+								"description": "Returns a basic dataset of character data."
+							},
+							"response": []
+						},
+						{
+							"name": "Achievements",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{battle-net-host}}/wow/character/{{wow.realm}}/{{wow.character}}?fields=achievements&locale={{locale}}&access_token={{access-token}}",
+									"host": [
+										"{{battle-net-host}}"
+									],
+									"path": [
+										"wow",
+										"character",
+										"{{wow.realm}}",
+										"{{wow.character}}"
+									],
+									"query": [
+										{
+											"key": "fields",
+											"value": "achievements",
+											"description": "Returns a list of the battle pets the character has obtained."
+										},
+										{
+											"key": "locale",
+											"value": "{{locale}}",
+											"description": "The locale to reflect in localized data."
+										},
+										{
+											"key": "access_token",
+											"value": "{{access-token}}"
+										}
+									]
+								},
+								"description": "Returns a map of achievement data including completion timestamps and criteria information."
+							},
+							"response": []
+						},
+						{
+							"name": "Appearance",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{battle-net-host}}/wow/character/{{wow.realm}}/{{wow.character}}?fields=appearance&locale={{locale}}&access_token={{access-token}}",
+									"host": [
+										"{{battle-net-host}}"
+									],
+									"path": [
+										"wow",
+										"character",
+										"{{wow.realm}}",
+										"{{wow.character}}"
+									],
+									"query": [
+										{
+											"key": "fields",
+											"value": "appearance",
+											"description": "Data about the character's current battle pet slots.\n\nThe response contains which slot a pet is in and whether the slot is empty or locked. The response also includes the battlePetId, which is unique for the character and can be used to match a battlePetId in the pets field for the character. The ability list is the list of three active abilities on a pet. If the pet is not high enough level for multiple abilities it will always be the pet's first three abilities."
+										},
+										{
+											"key": "locale",
+											"value": "{{locale}}",
+											"description": "Returns a list of raids and bosses indicating raid progression and completeness."
+										},
+										{
+											"key": "access_token",
+											"value": "{{access-token}}",
+											"description": "Returns a map of PvP information, including arena team membership and rated battlegrounds information."
+										}
+									]
+								},
+								"description": "Returns a map of a character's appearance settings, such as which face texture they've selected and whether or not a helm is visible."
+							},
+							"response": []
+						},
+						{
+							"name": "Feed",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{battle-net-host}}/wow/character/{{wow.realm}}/{{wow.character}}?fields=feed&locale={{locale}}&access_token={{access-token}}",
+									"host": [
+										"{{battle-net-host}}"
+									],
+									"path": [
+										"wow",
+										"character",
+										"{{wow.realm}}",
+										"{{wow.character}}"
+									],
+									"query": [
+										{
+											"key": "fields",
+											"value": "feed",
+											"description": "Returns a list of the character's professions. Does not include class professions."
+										},
+										{
+											"key": "locale",
+											"value": "{{locale}}",
+											"description": "A summary of the guild to which the character belongs. If the character does not belong to a guild and this field is requested, this field will not be exposed.\n\nWhen a guild is requested, this resource returns a map with key-value pairs that describe a basic set of guild information. Note that the rank of the character is not included in this block as it describes a guild and not a membership of the guild. To retrieve the character's rank within the guild, make a specific, separate request to the guild profile resource."
+										},
+										{
+											"key": "access_token",
+											"value": "{{access-token}}",
+											"description": "Returns a list of all combat pets the character has obtained."
+										}
+									]
+								},
+								"description": "The character's activity feed."
+							},
+							"response": []
+						},
+						{
+							"name": "Guild",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{battle-net-host}}/wow/character/{{wow.realm}}/{{wow.character}}?fields=guild&locale={{locale}}&access_token={{access-token}}",
+									"host": [
+										"{{battle-net-host}}"
+									],
+									"path": [
+										"wow",
+										"character",
+										"{{wow.realm}}",
+										"{{wow.character}}"
+									],
+									"query": [
+										{
+											"key": "fields",
+											"value": "guild",
+											"description": "A summary of the guild to which the character belongs. If the character does not belong to a guild and this field is requested, this field will not be exposed.\n\nWhen a guild is requested, this resource returns a map with key-value pairs that describe a basic set of guild information. Note that the rank of the character is not included in this block as it describes a guild and not a membership of the guild. To retrieve the character's rank within the guild, make a specific, separate request to the guild profile resource."
+										},
+										{
+											"key": "locale",
+											"value": "{{locale}}",
+											"description": "Returns a list of all combat pets the character has obtained."
+										},
+										{
+											"key": "access_token",
+											"value": "{{access-token}}",
+											"description": "Returns a list of items equipped by the character. Use of this field will also include the average item level and average item level equipped for the character.\n\nWhen the items field is used, this resource returns a map structure containing information about the character's equipped items as well as their average item level."
+										}
+									]
+								},
+								"description": "A summary of the guild to which the character belongs. If the character does not belong to a guild and this field is requested, this field will not be exposed.\n\nWhen a guild is requested, this resource returns a map with key-value pairs that describe a basic set of guild information. Note that the rank of the character is not included in this block as it describes a guild and not a membership of the guild. To retrieve the character's rank within the guild, make a specific, separate request to the guild profile resource."
+							},
+							"response": []
+						},
+						{
+							"name": "Hunter Pets",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{battle-net-host}}/wow/character/{{wow.realm}}/{{wow.character}}?fields=hunterPets&locale={{locale}}&access_token={{access-token}}",
+									"host": [
+										"{{battle-net-host}}"
+									],
+									"path": [
+										"wow",
+										"character",
+										"{{wow.realm}}",
+										"{{wow.character}}"
+									],
+									"query": [
+										{
+											"key": "fields",
+											"value": "hunterPets",
+											"description": "Returns a list of all combat pets the character has obtained."
+										},
+										{
+											"key": "locale",
+											"value": "{{locale}}",
+											"description": "The locale to reflect in localized data."
+										},
+										{
+											"key": "access_token",
+											"value": "{{access-token}}"
+										}
+									]
+								},
+								"description": "Returns a list of all combat pets the character has obtained."
+							},
+							"response": []
+						},
+						{
+							"name": "Items",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{battle-net-host}}/wow/character/{{wow.realm}}/{{wow.character}}?fields=items&locale={{locale}}&access_token={{access-token}}",
+									"host": [
+										"{{battle-net-host}}"
+									],
+									"path": [
+										"wow",
+										"character",
+										"{{wow.realm}}",
+										"{{wow.character}}"
+									],
+									"query": [
+										{
+											"key": "fields",
+											"value": "items",
+											"description": "Returns a list of items equipped by the character. Use of this field will also include the average item level and average item level equipped for the character.\n\nWhen the items field is used, this resource returns a map structure containing information about the character's equipped items as well as their average item level."
+										},
+										{
+											"key": "locale",
+											"value": "{{locale}}",
+											"description": "The locale to reflect in localized data."
+										},
+										{
+											"key": "access_token",
+											"value": "{{access-token}}"
+										}
+									]
+								},
+								"description": "Returns a list of items equipped by the character. Use of this field will also include the average item level and average item level equipped for the character.\n\nWhen the **items** field is used, this resource returns a map structure containing information about the character's equipped items as well as their average item level."
+							},
+							"response": []
+						},
+						{
+							"name": "Mounts",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{battle-net-host}}/wow/character/{{wow.realm}}/{{wow.character}}?fields=mounts&locale={{locale}}&access_token={{access-token}}",
+									"host": [
+										"{{battle-net-host}}"
+									],
+									"path": [
+										"wow",
+										"character",
+										"{{wow.realm}}",
+										"{{wow.character}}"
+									],
+									"query": [
+										{
+											"key": "fields",
+											"value": "mounts",
+											"description": "Returns a list of all mounts the character has obtained."
+										},
+										{
+											"key": "locale",
+											"value": "{{locale}}",
+											"description": "The locale to reflect in localized data."
+										},
+										{
+											"key": "access_token",
+											"value": "{{access-token}}"
+										}
+									]
+								},
+								"description": "Returns a list of all mounts the character has obtained."
+							},
+							"response": []
+						},
+						{
+							"name": "Pets",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{battle-net-host}}/wow/character/{{wow.realm}}/{{wow.character}}?fields=pets&locale={{locale}}&access_token={{access-token}}",
+									"host": [
+										"{{battle-net-host}}"
+									],
+									"path": [
+										"wow",
+										"character",
+										"{{wow.realm}}",
+										"{{wow.character}}"
+									],
+									"query": [
+										{
+											"key": "fields",
+											"value": "pets",
+											"description": "Returns a list of the battle pets the character has obtained."
+										},
+										{
+											"key": "locale",
+											"value": "{{locale}}",
+											"description": "The locale to reflect in localized data."
+										},
+										{
+											"key": "access_token",
+											"value": "{{access-token}}"
+										}
+									]
+								},
+								"description": "Returns a list of the battle pets the character has obtained."
+							},
+							"response": []
+						},
+						{
+							"name": "Pet Slots",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{battle-net-host}}/wow/character/{{wow.realm}}/{{wow.character}}?fields=petSlots&locale={{locale}}&access_token={{access-token}}",
+									"host": [
+										"{{battle-net-host}}"
+									],
+									"path": [
+										"wow",
+										"character",
+										"{{wow.realm}}",
+										"{{wow.character}}"
+									],
+									"query": [
+										{
+											"key": "fields",
+											"value": "petSlots",
+											"description": "Data about the character's current battle pet slots.\n\nThe response contains which slot a pet is in and whether the slot is empty or locked. The response also includes the battlePetId, which is unique for the character and can be used to match a battlePetId in the pets field for the character. The ability list is the list of three active abilities on a pet. If the pet is not high enough level for multiple abilities it will always be the pet's first three abilities."
+										},
+										{
+											"key": "locale",
+											"value": "{{locale}}",
+											"description": "The locale to reflect in localized data."
+										},
+										{
+											"key": "access_token",
+											"value": "{{access-token}}"
+										}
+									]
+								},
+								"description": "Data about the character's current battle pet slots.\n\nThe response contains which slot a pet is in and whether the slot is empty or locked. The response also includes the **battlePetId**, which is unique for the character and can be used to match a **battlePetId** in the pets field for the character. The ability list is the list of three active abilities on a pet. If the pet is not high enough level for multiple abilities it will always be the pet's first three abilities."
+							},
+							"response": []
+						},
+						{
+							"name": "Professions",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{battle-net-host}}/wow/character/{{wow.realm}}/{{wow.character}}?fields=professions&locale={{locale}}&access_token={{access-token}}",
+									"host": [
+										"{{battle-net-host}}"
+									],
+									"path": [
+										"wow",
+										"character",
+										"{{wow.realm}}",
+										"{{wow.character}}"
+									],
+									"query": [
+										{
+											"key": "fields",
+											"value": "professions",
+											"description": "Returns a list of the character's professions. Does not include class professions."
+										},
+										{
+											"key": "locale",
+											"value": "{{locale}}",
+											"description": "The locale to reflect in localized data."
+										},
+										{
+											"key": "access_token",
+											"value": "{{access-token}}"
+										}
+									]
+								},
+								"description": "Returns a list of the character's professions. Does not include class professions."
+							},
+							"response": []
+						},
+						{
+							"name": "Progression",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{battle-net-host}}/wow/character/{{wow.realm}}/{{wow.character}}?fields=progression&locale={{locale}}&access_token={{access-token}}",
+									"host": [
+										"{{battle-net-host}}"
+									],
+									"path": [
+										"wow",
+										"character",
+										"{{wow.realm}}",
+										"{{wow.character}}"
+									],
+									"query": [
+										{
+											"key": "fields",
+											"value": "progression",
+											"description": "Returns a list of raids and bosses indicating raid progression and completeness."
+										},
+										{
+											"key": "locale",
+											"value": "{{locale}}",
+											"description": "The locale to reflect in localized data."
+										},
+										{
+											"key": "access_token",
+											"value": "{{access-token}}"
+										}
+									]
+								},
+								"description": "Returns a list of raids and bosses indicating raid progression and completeness."
+							},
+							"response": []
+						},
+						{
+							"name": "PVP",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{battle-net-host}}/wow/character/{{wow.realm}}/{{wow.character}}?fields=pvp&locale={{locale}}&access_token={{access-token}}",
+									"host": [
+										"{{battle-net-host}}"
+									],
+									"path": [
+										"wow",
+										"character",
+										"{{wow.realm}}",
+										"{{wow.character}}"
+									],
+									"query": [
+										{
+											"key": "fields",
+											"value": "pvp",
+											"description": "Returns a map of PvP information, including arena team membership and rated battlegrounds information."
+										},
+										{
+											"key": "locale",
+											"value": "{{locale}}",
+											"description": "The locale to reflect in localized data."
+										},
+										{
+											"key": "access_token",
+											"value": "{{access-token}}"
+										}
+									]
+								},
+								"description": "Returns a map of PvP information, including arena team membership and rated battlegrounds information."
+							},
+							"response": []
+						},
+						{
+							"name": "Quests",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{battle-net-host}}/wow/character/{{wow.realm}}/{{wow.character}}?fields=quests&locale={{locale}}&access_token={{access-token}}",
+									"host": [
+										"{{battle-net-host}}"
+									],
+									"path": [
+										"wow",
+										"character",
+										"{{wow.realm}}",
+										"{{wow.character}}"
+									],
+									"query": [
+										{
+											"key": "fields",
+											"value": "quests",
+											"description": "Returns a list of quests the character has completed."
+										},
+										{
+											"key": "locale",
+											"value": "{{locale}}",
+											"description": "The locale to reflect in localized data."
+										},
+										{
+											"key": "access_token",
+											"value": "{{access-token}}"
+										}
+									]
+								},
+								"description": "Returns a list of quests the character has completed."
+							},
+							"response": []
+						},
+						{
+							"name": "Reputation",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{battle-net-host}}/wow/character/{{wow.realm}}/{{wow.character}}?fields=reputation&locale={{locale}}&access_token={{access-token}}",
+									"host": [
+										"{{battle-net-host}}"
+									],
+									"path": [
+										"wow",
+										"character",
+										"{{wow.realm}}",
+										"{{wow.character}}"
+									],
+									"query": [
+										{
+											"key": "fields",
+											"value": "reputation",
+											"description": "Returns a basic dataset of character data."
+										},
+										{
+											"key": "locale",
+											"value": "{{locale}}",
+											"description": "The locale to reflect in localized data."
+										},
+										{
+											"key": "access_token",
+											"value": "{{access-token}}"
+										}
+									]
+								},
+								"description": "Returns a list of the factions with which the character has an associated reputation."
+							},
+							"response": []
+						},
+						{
+							"name": "Statistics",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{battle-net-host}}/wow/character/{{wow.realm}}/{{wow.character}}?fields=statistics&locale={{locale}}&access_token={{access-token}}",
+									"host": [
+										"{{battle-net-host}}"
+									],
+									"path": [
+										"wow",
+										"character",
+										"{{wow.realm}}",
+										"{{wow.character}}"
+									],
+									"query": [
+										{
+											"key": "fields",
+											"value": "statistics",
+											"description": "Returns a map of character statistics."
+										},
+										{
+											"key": "locale",
+											"value": "{{locale}}",
+											"description": "The locale to reflect in localized data."
+										},
+										{
+											"key": "access_token",
+											"value": "{{access-token}}"
+										}
+									]
+								},
+								"description": "Returns a map of character statistics."
+							},
+							"response": []
+						},
+						{
+							"name": "Stats",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{battle-net-host}}/wow/character/{{wow.realm}}/{{wow.character}}?fields=stats&locale={{locale}}&access_token={{access-token}}",
+									"host": [
+										"{{battle-net-host}}"
+									],
+									"path": [
+										"wow",
+										"character",
+										"{{wow.realm}}",
+										"{{wow.character}}"
+									],
+									"query": [
+										{
+											"key": "fields",
+											"value": "stats",
+											"description": "Returns a map of character attributes and stats."
+										},
+										{
+											"key": "locale",
+											"value": "{{locale}}",
+											"description": "The locale to reflect in localized data."
+										},
+										{
+											"key": "access_token",
+											"value": "{{access-token}}"
+										}
+									]
+								},
+								"description": "Returns a map of character attributes and stats."
+							},
+							"response": []
+						},
+						{
+							"name": "Talents",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{battle-net-host}}/wow/character/{{wow.realm}}/{{wow.character}}?fields=talents&locale={{locale}}&access_token={{access-token}}",
+									"host": [
+										"{{battle-net-host}}"
+									],
+									"path": [
+										"wow",
+										"character",
+										"{{wow.realm}}",
+										"{{wow.character}}"
+									],
+									"query": [
+										{
+											"key": "fields",
+											"value": "talents",
+											"description": "Returns a list of the character's talent structures."
+										},
+										{
+											"key": "locale",
+											"value": "{{locale}}",
+											"description": "The locale to reflect in localized data."
+										},
+										{
+											"key": "access_token",
+											"value": "{{access-token}}"
+										}
+									]
+								},
+								"description": "Returns a list of the character's talent structures."
+							},
+							"response": []
+						},
+						{
+							"name": "Titles",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{battle-net-host}}/wow/character/{{wow.realm}}/{{wow.character}}?fields=titles&locale={{locale}}&access_token={{access-token}}",
+									"host": [
+										"{{battle-net-host}}"
+									],
+									"path": [
+										"wow",
+										"character",
+										"{{wow.realm}}",
+										"{{wow.character}}"
+									],
+									"query": [
+										{
+											"key": "fields",
+											"value": "titles",
+											"description": "Returns a list of titles the character has obtained, including the currently selected title."
+										},
+										{
+											"key": "locale",
+											"value": "{{locale}}",
+											"description": "The locale to reflect in localized data."
+										},
+										{
+											"key": "access_token",
+											"value": "{{access-token}}"
+										}
+									]
+								},
+								"description": "Returns a list of titles the character has obtained, including the currently selected title."
+							},
+							"response": []
+						},
+						{
+							"name": "Audit",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{battle-net-host}}/wow/character/{{wow.realm}}/{{wow.character}}?fields=audit&locale={{locale}}&access_token={{access-token}}",
+									"host": [
+										"{{battle-net-host}}"
+									],
+									"path": [
+										"wow",
+										"character",
+										"{{wow.realm}}",
+										"{{wow.character}}"
+									],
+									"query": [
+										{
+											"key": "fields",
+											"value": "audit",
+											"description": "Returns a basic dataset of character data."
+										},
+										{
+											"key": "locale",
+											"value": "{{locale}}",
+											"description": "Returns a list of the battle pets the character has obtained."
+										},
+										{
+											"key": "access_token",
+											"value": "{{access-token}}",
+											"description": "Data about the character's current battle pet slots.\n\nThe response contains which slot a pet is in and whether the slot is empty or locked. The response also includes the battlePetId, which is unique for the character and can be used to match a battlePetId in the pets field for the character. The ability list is the list of three active abilities on a pet. If the pet is not high enough level for multiple abilities it will always be the pet's first three abilities."
+										}
+									]
+								},
+								"description": "Raw character audit data that powers the character audit on the game site."
+							},
+							"response": []
+						}
+					],
+					"description": "The Character Profile API is the primary way to access character information. This API can be used to fetch a single character at a time through an HTTP GET request to a URL describing the character profile resource. By default, these requests return a basic dataset, and each request can return zero or more additional fields. To access this API, craft a resource URL pointing to the desired character for which to retrieve information.",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "32d09a3f-14d2-4c31-a858-383bab128c87",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "001368c5-8c34-498d-9fab-0498f1da3d49",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Guild Profile API",
+					"item": [
+						{
+							"name": "Guild Profile",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{battle-net-host}}/wow/guild/{{wow.realm}}/{{wow.guild}}?locale={{locale}}&access_token={{access-token}}",
+									"host": [
+										"{{battle-net-host}}"
+									],
+									"path": [
+										"wow",
+										"guild",
+										"{{wow.realm}}",
+										"{{wow.guild}}"
+									],
+									"query": [
+										{
+											"key": "locale",
+											"value": "{{locale}}",
+											"description": "The locale to reflect in localized data."
+										},
+										{
+											"key": "access_token",
+											"value": "{{access-token}}"
+										}
+									]
+								},
+								"description": "The guild profile API is the primary way to access guild information. This API can fetch a single guild at a time through an HTTP GET request to a URL describing the guild profile resource. By default, these requests return a basic dataset and each request can retrieve zero or more additional fields.\n\nAlthough this endpoint has no required query string parameters, requests can optionally pass the fields query string parameter to indicate that one or more of the optional datasets is to be retrieved. Those additional fields are listed in the method titled \"Optional Fields\"."
+							},
+							"response": []
+						},
+						{
+							"name": "Members",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{battle-net-host}}/wow/guild/{{wow.realm}}/{{wow.guild}}?locale={{locale}}&access_token={{access-token}}&fields=members",
+									"host": [
+										"{{battle-net-host}}"
+									],
+									"path": [
+										"wow",
+										"guild",
+										"{{wow.realm}}",
+										"{{wow.guild}}"
+									],
+									"query": [
+										{
+											"key": "locale",
+											"value": "{{locale}}",
+											"description": "The locale to reflect in localized data."
+										},
+										{
+											"key": "access_token",
+											"value": "{{access-token}}"
+										},
+										{
+											"key": "fields",
+											"value": "members",
+											"description": "A value of members tells the API to include guild's member list in the response."
+										}
+									]
+								},
+								"description": "Returns a list of characters that are members of the guild. When the members list is requested, a list of character objects is returned. Each object in the returned members list contains a character block as well as a rank field."
+							},
+							"response": []
+						},
+						{
+							"name": "Achievements",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{battle-net-host}}/wow/guild/{{wow.realm}}/{{wow.guild}}?locale={{locale}}&access_token={{access-token}}&fields=achievements",
+									"host": [
+										"{{battle-net-host}}"
+									],
+									"path": [
+										"wow",
+										"guild",
+										"{{wow.realm}}",
+										"{{wow.guild}}"
+									],
+									"query": [
+										{
+											"key": "locale",
+											"value": "{{locale}}",
+											"description": "The locale to reflect in localized data."
+										},
+										{
+											"key": "access_token",
+											"value": "{{access-token}}"
+										},
+										{
+											"key": "fields",
+											"value": "achievements",
+											"description": "A value of achievements tells the API to include the guild's achievement data in the response."
+										}
+									]
+								},
+								"description": "A set of data structures that describe the achievements earned by the guild. When requesting achievement data, several sets of data will be returned.\n\n* `achievementsCompleted`: a list of achievement IDs.\n* `achievementsCompletedTimestamp`: a list of timestamps corresponding to the achievement IDs in the achievementsCompleted list. The value of each timestamp indicates when the related achievement was earned by the guild.\n* `criteria`: a list of criteria IDs used to determine the partial completeness of guild achievements.\n* `criteriaQuantity`: a list of values associated with a given achievement criteria. The position of a value corresponds to the position of a given achievement criteria.\n* `criteriaTimestamp`: a list of timestamps with values that represent when the criteria was considered complete. The position of a value corresponds to the position of a given achievement criteria.\n* `criteriaCreated`: a list of timestamps for which the value represents the time the criteria was considered started. The position of a value corresponds to the position of a given achievement criteria."
+							},
+							"response": []
+						},
+						{
+							"name": "News",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{battle-net-host}}/wow/guild/{{wow.realm}}/{{wow.guild}}?locale={{locale}}&access_token={{access-token}}&fields=news",
+									"host": [
+										"{{battle-net-host}}"
+									],
+									"path": [
+										"wow",
+										"guild",
+										"{{wow.realm}}",
+										"{{wow.guild}}"
+									],
+									"query": [
+										{
+											"key": "locale",
+											"value": "{{locale}}",
+											"description": "The locale to reflect in localized data."
+										},
+										{
+											"key": "access_token",
+											"value": "{{access-token}}"
+										},
+										{
+											"key": "fields",
+											"value": "news",
+											"description": "A value of news tells the API to include the guild's news feed in the response."
+										}
+									]
+								},
+								"description": "A set of data structures that describe the guild's news feed. When the news feed is requested, this resource returns a list of news objects. Each one has a type, a timestamp, and some other data depending on the type: itemId, an achievement object, and so on."
+							},
+							"response": []
+						},
+						{
+							"name": "Challenge",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{battle-net-host}}/wow/guild/{{wow.realm}}/{{wow.guild}}?locale={{locale}}&access_token={{access-token}}&fields=challenge",
+									"host": [
+										"{{battle-net-host}}"
+									],
+									"path": [
+										"wow",
+										"guild",
+										"{{wow.realm}}",
+										"{{wow.guild}}"
+									],
+									"query": [
+										{
+											"key": "locale",
+											"value": "{{locale}}",
+											"description": "The locale to reflect in localized data."
+										},
+										{
+											"key": "access_token",
+											"value": "{{access-token}}"
+										},
+										{
+											"key": "fields",
+											"value": "challenge",
+											"description": "A value of challenge tells the API to include the guild's Challenge Mode data in the response."
+										}
+									]
+								},
+								"description": "The top three challenge mode guild run times for each challenge mode map."
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Item API",
+					"item": [
+						{
+							"name": "Item",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{battle-net-host}}/wow/item/{{wow.item-id}}?locale={{locale}}&access_token={{access-token}}",
+									"host": [
+										"{{battle-net-host}}"
+									],
+									"path": [
+										"wow",
+										"item",
+										"{{wow.item-id}}"
+									],
+									"query": [
+										{
+											"key": "locale",
+											"value": "{{locale}}",
+											"description": "The locale to reflect in localized data."
+										},
+										{
+											"key": "access_token",
+											"value": "{{access-token}}"
+										}
+									]
+								},
+								"description": "The item API provides detailed item information, including item set information."
+							},
+							"response": []
+						},
+						{
+							"name": "Item set",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{battle-net-host}}/wow/item/set/{{wow.item-set-id}}?locale={{locale}}&access_token={{access-token}}",
+									"host": [
+										"{{battle-net-host}}"
+									],
+									"path": [
+										"wow",
+										"item",
+										"set",
+										"{{wow.item-set-id}}"
+									],
+									"query": [
+										{
+											"key": "locale",
+											"value": "{{locale}}",
+											"description": "The locale to reflect in localized data."
+										},
+										{
+											"key": "access_token",
+											"value": "{{access-token}}"
+										}
+									]
+								},
+								"description": "The item API provides detailed item information, including item set information."
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Mount API",
+					"item": [
+						{
+							"name": "Master List",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{battle-net-host}}/wow/mount/?locale={{locale}}&access_token={{access-token}}",
+									"host": [
+										"{{battle-net-host}}"
+									],
+									"path": [
+										"wow",
+										"mount",
+										""
+									],
+									"query": [
+										{
+											"key": "locale",
+											"value": "{{locale}}",
+											"description": "The locale to reflect in localized data."
+										},
+										{
+											"key": "access_token",
+											"value": "{{access-token}}"
+										}
+									]
+								},
+								"description": "Returns a list of all supported mounts."
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Pet API",
+					"item": [
+						{
+							"name": "Master List",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{battle-net-host}}/wow/pet/?locale={{locale}}&access_token={{access-token}}",
+									"host": [
+										"{{battle-net-host}}"
+									],
+									"path": [
+										"wow",
+										"pet",
+										""
+									],
+									"query": [
+										{
+											"key": "locale",
+											"value": "{{locale}}",
+											"description": "The locale to reflect in localized data."
+										},
+										{
+											"key": "access_token",
+											"value": "{{access-token}}"
+										}
+									]
+								},
+								"description": "Returns a list of all supported battle and vanity pets."
+							},
+							"response": []
+						},
+						{
+							"name": "Abilities",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{battle-net-host}}/wow/pet/ability/{{wow.pet-ability-id}}?locale={{locale}}&access_token={{access-token}}",
+									"host": [
+										"{{battle-net-host}}"
+									],
+									"path": [
+										"wow",
+										"pet",
+										"ability",
+										"{{wow.pet-ability-id}}"
+									],
+									"query": [
+										{
+											"key": "locale",
+											"value": "{{locale}}",
+											"description": "The locale to reflect in localized data."
+										},
+										{
+											"key": "access_token",
+											"value": "{{access-token}}"
+										}
+									]
+								},
+								"description": "Returns data about a individual battle pet ability ID. This resource does not provide ability tooltips."
+							},
+							"response": []
+						},
+						{
+							"name": "Species",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{battle-net-host}}/wow/pet/species/{{wow.pet-species-id}}?locale={{locale}}&access_token={{access-token}}",
+									"host": [
+										"{{battle-net-host}}"
+									],
+									"path": [
+										"wow",
+										"pet",
+										"species",
+										"{{wow.pet-species-id}}"
+									],
+									"query": [
+										{
+											"key": "locale",
+											"value": "{{locale}}",
+											"description": "The locale to reflect in localized data."
+										},
+										{
+											"key": "access_token",
+											"value": "{{access-token}}"
+										}
+									]
+								},
+								"description": "Returns data about an individual pet species. Use pets as the field value in a character profile request to get species IDs. Each species also has data about its six abilities."
+							},
+							"response": []
+						},
+						{
+							"name": "Stats",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{battle-net-host}}/wow/pet/stats/{{wow.pet-species-id}}?locale={{locale}}&access_token={{access-token}}&level=25&breedId=5&qualityId=4",
+									"host": [
+										"{{battle-net-host}}"
+									],
+									"path": [
+										"wow",
+										"pet",
+										"stats",
+										"{{wow.pet-species-id}}"
+									],
+									"query": [
+										{
+											"key": "locale",
+											"value": "{{locale}}",
+											"description": "The locale to reflect in localized data."
+										},
+										{
+											"key": "access_token",
+											"value": "{{access-token}}"
+										},
+										{
+											"key": "level",
+											"value": "25",
+											"description": "The pet's level. Pet levels max out at 25. If omitted, the API assumes a default value of 1."
+										},
+										{
+											"key": "breedId",
+											"value": "5",
+											"description": "The pet's breed. Retrievable via the Character Profile API. If omitted the API assumes a default value of 3."
+										},
+										{
+											"key": "qualityId",
+											"value": "4",
+											"description": "The pet's quality. Retrievable via the Character Profile API. Pet quality can range from 0 to 5 (0 is poor quality and 5 is legendary). If omitted, the API will assume a default value of 1."
+										}
+									]
+								},
+								"description": "Returns detailed information about a given species of pet."
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "PVP API",
+					"item": [
+						{
+							"name": "Leaderboards",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{battle-net-host}}/wow/leaderboard/{{wow.bracket}}?locale={{locale}}&access_token={{access-token}}",
+									"host": [
+										"{{battle-net-host}}"
+									],
+									"path": [
+										"wow",
+										"leaderboard",
+										"{{wow.bracket}}"
+									],
+									"query": [
+										{
+											"key": "locale",
+											"value": "{{locale}}",
+											"description": "The locale to reflect in localized data."
+										},
+										{
+											"key": "access_token",
+											"value": "{{access-token}}"
+										}
+									]
+								},
+								"description": "The Leaderboard API endpoint provides leaderboard information for the 2v2, 3v3, 5v5, and Rated Battleground leaderboards.\n\n* `bracket`: The type of leaderboard to retrieve. Valid entries are 2v2, 3v3, 5v5, and rbg."
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Quest API",
+					"item": [
+						{
+							"name": "Quest",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{battle-net-host}}/wow/quest/{{wow.quest-id}}?locale={{locale}}&access_token={{access-token}}",
+									"host": [
+										"{{battle-net-host}}"
+									],
+									"path": [
+										"wow",
+										"quest",
+										"{{wow.quest-id}}"
+									],
+									"query": [
+										{
+											"key": "locale",
+											"value": "{{locale}}",
+											"description": "The locale to reflect in localized data."
+										},
+										{
+											"key": "access_token",
+											"value": "{{access-token}}"
+										}
+									]
+								},
+								"description": "Returns metadata for a specified quest."
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Realm Status API",
+					"item": [
+						{
+							"name": "Realm status",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{battle-net-host}}/wow/realm/status?locale={{locale}}&access_token={{access-token}}",
+									"host": [
+										"{{battle-net-host}}"
+									],
+									"path": [
+										"wow",
+										"realm",
+										"status"
+									],
+									"query": [
+										{
+											"key": "locale",
+											"value": "{{locale}}",
+											"description": "The locale to reflect in localized data."
+										},
+										{
+											"key": "access_token",
+											"value": "{{access-token}}"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Recipe API",
+					"item": [
+						{
+							"name": "Recipe",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{battle-net-host}}/wow/recipe/{{wow.recipe-id}}?locale={{locale}}&access_token={{access-token}}",
+									"host": [
+										"{{battle-net-host}}"
+									],
+									"path": [
+										"wow",
+										"recipe",
+										"{{wow.recipe-id}}"
+									],
+									"query": [
+										{
+											"key": "locale",
+											"value": "{{locale}}",
+											"description": "The locale to reflect in localized data."
+										},
+										{
+											"key": "access_token",
+											"value": "{{access-token}}"
+										}
+									]
+								},
+								"description": "Returns basic recipe information."
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Spell API",
+					"item": [
+						{
+							"name": "Spell",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{battle-net-host}}/wow/spell/{{wow.spell-id}}?locale={{locale}}&access_token={{access-token}}",
+									"host": [
+										"{{battle-net-host}}"
+									],
+									"path": [
+										"wow",
+										"spell",
+										"{{wow.spell-id}}"
+									],
+									"query": [
+										{
+											"key": "locale",
+											"value": "{{locale}}",
+											"description": "The locale to reflect in localized data."
+										},
+										{
+											"key": "access_token",
+											"value": "{{access-token}}"
+										}
+									]
+								},
+								"description": "Returns information about spells."
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "User API",
+					"item": [
+						{
+							"name": "Characters",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{battle-net-host}}/wow/user/characters?locale={{locale}}&access_token={{access-token}}",
+									"host": [
+										"{{battle-net-host}}"
+									],
+									"path": [
+										"wow",
+										"user",
+										"characters"
+									],
+									"query": [
+										{
+											"key": "locale",
+											"value": "{{locale}}",
+											"description": "The locale to reflect in localized data."
+										},
+										{
+											"key": "access_token",
+											"value": "{{access-token}}"
+										}
+									]
+								},
+								"description": "Returns a list of characters for an account."
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Zone API",
+					"item": [
+						{
+							"name": "Master List",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{battle-net-host}}/wow/zone/?locale={{locale}}&access_token={{access-token}}",
+									"host": [
+										"{{battle-net-host}}"
+									],
+									"path": [
+										"wow",
+										"zone",
+										""
+									],
+									"query": [
+										{
+											"key": "locale",
+											"value": "{{locale}}",
+											"description": "The locale to reflect in localized data."
+										},
+										{
+											"key": "access_token",
+											"value": "{{access-token}}"
+										}
+									]
+								},
+								"description": "Returns a list of all supported zones and their bosses. A \"zone\" in this context should be considered a dungeon or a raid, not a world zone. A \"boss\" in this context should be considered a boss encounter, which may include more than one NPC."
+							},
+							"response": []
+						},
+						{
+							"name": "Zone",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{battle-net-host}}/wow/zone/{{wow.zone-id}}?locale={{locale}}&access_token={{access-token}}",
+									"host": [
+										"{{battle-net-host}}"
+									],
+									"path": [
+										"wow",
+										"zone",
+										"{{wow.zone-id}}"
+									],
+									"query": [
+										{
+											"key": "locale",
+											"value": "{{locale}}",
+											"description": "The locale to reflect in localized data."
+										},
+										{
+											"key": "access_token",
+											"value": "{{access-token}}"
+										}
+									]
+								},
+								"description": "Returns information about zones."
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Data Resources",
+					"item": [
+						{
+							"name": "Battlegroups",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{battle-net-host}}/wow/data/battlegroups/?locale={{locale}}&access_token={{access-token}}",
+									"host": [
+										"{{battle-net-host}}"
+									],
+									"path": [
+										"wow",
+										"data",
+										"battlegroups",
+										""
+									],
+									"query": [
+										{
+											"key": "locale",
+											"value": "{{locale}}",
+											"description": "The locale to reflect in localized data."
+										},
+										{
+											"key": "access_token",
+											"value": "{{access-token}}"
+										}
+									]
+								},
+								"description": "Returns a list of battlegroups for the specified region. Note the trailing / on this request path."
+							},
+							"response": []
+						},
+						{
+							"name": "Character Races",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{battle-net-host}}/wow/data/character/races?locale={{locale}}&access_token={{access-token}}",
+									"host": [
+										"{{battle-net-host}}"
+									],
+									"path": [
+										"wow",
+										"data",
+										"character",
+										"races"
+									],
+									"query": [
+										{
+											"key": "locale",
+											"value": "{{locale}}",
+											"description": "The locale to reflect in localized data."
+										},
+										{
+											"key": "access_token",
+											"value": "{{access-token}}"
+										}
+									]
+								},
+								"description": "Returns a list of races and their associated faction, name, unique ID, and skin."
+							},
+							"response": []
+						},
+						{
+							"name": "Character Classes",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{battle-net-host}}/wow/data/character/classes?locale={{locale}}&access_token={{access-token}}",
+									"host": [
+										"{{battle-net-host}}"
+									],
+									"path": [
+										"wow",
+										"data",
+										"character",
+										"classes"
+									],
+									"query": [
+										{
+											"key": "locale",
+											"value": "{{locale}}",
+											"description": "The locale to reflect in localized data."
+										},
+										{
+											"key": "access_token",
+											"value": "{{access-token}}"
+										}
+									]
+								},
+								"description": "Returns a list of character classes."
+							},
+							"response": []
+						},
+						{
+							"name": "Character Achievements",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{battle-net-host}}/wow/data/character/achievements?locale={{locale}}&access_token={{access-token}}",
+									"host": [
+										"{{battle-net-host}}"
+									],
+									"path": [
+										"wow",
+										"data",
+										"character",
+										"achievements"
+									],
+									"query": [
+										{
+											"key": "locale",
+											"value": "{{locale}}",
+											"description": "The locale to reflect in localized data."
+										},
+										{
+											"key": "access_token",
+											"value": "{{access-token}}"
+										}
+									]
+								},
+								"description": "Returns a list of all achievements that characters can earn as well as the category structure and hierarchy."
+							},
+							"response": []
+						},
+						{
+							"name": "Guild Rewards",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{battle-net-host}}/wow/data/guild/rewards?locale={{locale}}&access_token={{access-token}}",
+									"host": [
+										"{{battle-net-host}}"
+									],
+									"path": [
+										"wow",
+										"data",
+										"guild",
+										"rewards"
+									],
+									"query": [
+										{
+											"key": "locale",
+											"value": "{{locale}}",
+											"description": "The locale to reflect in localized data."
+										},
+										{
+											"key": "access_token",
+											"value": "{{access-token}}"
+										}
+									]
+								},
+								"description": "The guild rewards data API provides a list of all guild rewards."
+							},
+							"response": []
+						},
+						{
+							"name": "Guild Perks",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{battle-net-host}}/wow/data/guild/perks?locale={{locale}}&access_token={{access-token}}",
+									"host": [
+										"{{battle-net-host}}"
+									],
+									"path": [
+										"wow",
+										"data",
+										"guild",
+										"perks"
+									],
+									"query": [
+										{
+											"key": "locale",
+											"value": "{{locale}}",
+											"description": "The locale to reflect in localized data."
+										},
+										{
+											"key": "access_token",
+											"value": "{{access-token}}"
+										}
+									]
+								},
+								"description": "Returns a list of all guild perks."
+							},
+							"response": []
+						},
+						{
+							"name": "Guild Achievements",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{battle-net-host}}/wow/data/guild/achievements?locale={{locale}}&access_token={{access-token}}",
+									"host": [
+										"{{battle-net-host}}"
+									],
+									"path": [
+										"wow",
+										"data",
+										"guild",
+										"achievements"
+									],
+									"query": [
+										{
+											"key": "locale",
+											"value": "{{locale}}",
+											"description": "The locale to reflect in localized data."
+										},
+										{
+											"key": "access_token",
+											"value": "{{access-token}}"
+										}
+									]
+								},
+								"description": "Returns a list of all guild achievements as well as the category structure and hierarchy."
+							},
+							"response": []
+						},
+						{
+							"name": "Item Classes",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{battle-net-host}}/wow/data/item/classes?locale={{locale}}&access_token={{access-token}}",
+									"host": [
+										"{{battle-net-host}}"
+									],
+									"path": [
+										"wow",
+										"data",
+										"item",
+										"classes"
+									],
+									"query": [
+										{
+											"key": "locale",
+											"value": "{{locale}}",
+											"description": "The locale to reflect in localized data."
+										},
+										{
+											"key": "access_token",
+											"value": "{{access-token}}"
+										}
+									]
+								},
+								"description": "Returns a list of item classes."
+							},
+							"response": []
+						},
+						{
+							"name": "Talents",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{battle-net-host}}/wow/data/talents?locale={{locale}}&access_token={{access-token}}",
+									"host": [
+										"{{battle-net-host}}"
+									],
+									"path": [
+										"wow",
+										"data",
+										"talents"
+									],
+									"query": [
+										{
+											"key": "locale",
+											"value": "{{locale}}",
+											"description": "The locale to reflect in localized data."
+										},
+										{
+											"key": "access_token",
+											"value": "{{access-token}}"
+										}
+									]
+								},
+								"description": "Returns a list of talents, specs, and glyphs for each class."
+							},
+							"response": []
+						},
+						{
+							"name": "Pet Types",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{battle-net-host}}/wow/data/pet/types?locale={{locale}}&access_token={{access-token}}",
+									"host": [
+										"{{battle-net-host}}"
+									],
+									"path": [
+										"wow",
+										"data",
+										"pet",
+										"types"
+									],
+									"query": [
+										{
+											"key": "locale",
+											"value": "{{locale}}",
+											"description": "The locale to reflect in localized data."
+										},
+										{
+											"key": "access_token",
+											"value": "{{access-token}}"
+										}
+									]
+								},
+								"description": "Returns a list of talents, specs, and glyphs for each class."
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				}
+			],
+			"auth": {
+				"type": "noauth"
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "87819f55-87d3-48ba-919f-574fb53fb7d3",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "c1eeb902-e0a0-42c2-a2b3-3ec4be185d2d",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Game Data APIs",
+			"item": [
+				{
+					"name": "Connected Realm API",
+					"item": [
+						{
+							"name": "Connected Realm Index",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{battle-net-host}}/data/wow/connected-realm/index?locale={{locale}}&access_token={{access-token}}&namespace={{wow.namespace}}",
+									"host": [
+										"{{battle-net-host}}"
+									],
+									"path": [
+										"data",
+										"wow",
+										"connected-realm",
+										"index"
+									],
+									"query": [
+										{
+											"key": "locale",
+											"value": "{{locale}}",
+											"description": "The locale to reflect in localized data."
+										},
+										{
+											"key": "access_token",
+											"value": "{{access-token}}"
+										},
+										{
+											"key": "namespace",
+											"value": "{{wow.namespace}}",
+											"description": "The namespace to use to locate this document."
+										}
+									]
+								},
+								"description": "Returns an index of connected realms."
+							},
+							"response": []
+						},
+						{
+							"name": "Connected Realm",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{battle-net-host}}/data/wow/connected-realm/{{wow.connected-realm-id}}?locale={{locale}}&access_token={{access-token}}&namespace={{wow.namespace}}",
+									"host": [
+										"{{battle-net-host}}"
+									],
+									"path": [
+										"data",
+										"wow",
+										"connected-realm",
+										"{{wow.connected-realm-id}}"
+									],
+									"query": [
+										{
+											"key": "locale",
+											"value": "{{locale}}",
+											"description": "The locale to reflect in localized data."
+										},
+										{
+											"key": "access_token",
+											"value": "{{access-token}}"
+										},
+										{
+											"key": "namespace",
+											"value": "{{wow.namespace}}",
+											"description": "The namespace to use to locate this document."
+										}
+									]
+								},
+								"description": "Returns a single connected realm by ID."
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Mythic Keystone Affix API",
+					"item": [
+						{
+							"name": "Keystone Affix Index",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{battle-net-host}}/data/wow/keystone-affix/index?locale={{locale}}&access_token={{access-token}}&namespace={{wow.namespace-static}}",
+									"host": [
+										"{{battle-net-host}}"
+									],
+									"path": [
+										"data",
+										"wow",
+										"keystone-affix",
+										"index"
+									],
+									"query": [
+										{
+											"key": "locale",
+											"value": "{{locale}}",
+											"description": "The locale to reflect in localized data."
+										},
+										{
+											"key": "access_token",
+											"value": "{{access-token}}"
+										},
+										{
+											"key": "namespace",
+											"value": "{{wow.namespace-static}}",
+											"description": "The namespace to use to locate this document."
+										}
+									]
+								},
+								"description": "Returns an index of Keystone affixes."
+							},
+							"response": []
+						},
+						{
+							"name": "Keystone Affix",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{battle-net-host}}/data/wow/keystone-affix/{{wow.keystone-affix-id}}?locale={{locale}}&access_token={{access-token}}&namespace={{wow.namespace-static}}",
+									"host": [
+										"{{battle-net-host}}"
+									],
+									"path": [
+										"data",
+										"wow",
+										"keystone-affix",
+										"{{wow.keystone-affix-id}}"
+									],
+									"query": [
+										{
+											"key": "locale",
+											"value": "{{locale}}",
+											"description": "The locale to reflect in localized data."
+										},
+										{
+											"key": "access_token",
+											"value": "{{access-token}}"
+										},
+										{
+											"key": "namespace",
+											"value": "{{wow.namespace-static}}",
+											"description": "The namespace to use to locate this document."
+										}
+									]
+								},
+								"description": "Returns a single Keystone affix by slug or ID."
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Mythic Raid Leaderboard API",
+					"item": [
+						{
+							"name": "Mythic Leaderboard",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{battle-net-host}}/data/wow/leaderboard/hall-of-fame/{{wow.raid}}/{{wow.fraction}}?locale={{locale}}&access_token={{access-token}}&namespace={{wow.namespace}}",
+									"host": [
+										"{{battle-net-host}}"
+									],
+									"path": [
+										"data",
+										"wow",
+										"leaderboard",
+										"hall-of-fame",
+										"{{wow.raid}}",
+										"{{wow.fraction}}"
+									],
+									"query": [
+										{
+											"key": "locale",
+											"value": "{{locale}}",
+											"description": "The locale to reflect in localized data."
+										},
+										{
+											"key": "access_token",
+											"value": "{{access-token}}"
+										},
+										{
+											"key": "namespace",
+											"value": "{{wow.namespace}}",
+											"description": "The namespace to use to locate this document."
+										}
+									]
+								},
+								"description": "Returns the leaderboard for a given raid and faction."
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Mythic Keystone Dungeon API",
+					"item": [
+						{
+							"name": "Mythic Keystone Dungeon Index",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{battle-net-host}}/data/wow/mythic-keystone/dungeon/index?locale={{locale}}&access_token={{access-token}}&namespace={{wow.namespace}}",
+									"host": [
+										"{{battle-net-host}}"
+									],
+									"path": [
+										"data",
+										"wow",
+										"mythic-keystone",
+										"dungeon",
+										"index"
+									],
+									"query": [
+										{
+											"key": "locale",
+											"value": "{{locale}}",
+											"description": "The locale to reflect in localized data."
+										},
+										{
+											"key": "access_token",
+											"value": "{{access-token}}"
+										},
+										{
+											"key": "namespace",
+											"value": "{{wow.namespace}}",
+											"description": "The namespace to use to locate this document."
+										}
+									]
+								},
+								"description": "Returns an index of Mythic Keystone dungeons."
+							},
+							"response": []
+						},
+						{
+							"name": "Mythic Keystone Dungeon",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{battle-net-host}}/data/wow/mythic-keystone/dungeon/{{wow.dungeon-id}}?locale={{locale}}&access_token={{access-token}}&namespace={{wow.namespace}}",
+									"host": [
+										"{{battle-net-host}}"
+									],
+									"path": [
+										"data",
+										"wow",
+										"mythic-keystone",
+										"dungeon",
+										"{{wow.dungeon-id}}"
+									],
+									"query": [
+										{
+											"key": "locale",
+											"value": "{{locale}}",
+											"description": "The locale to reflect in localized data."
+										},
+										{
+											"key": "access_token",
+											"value": "{{access-token}}"
+										},
+										{
+											"key": "namespace",
+											"value": "{{wow.namespace}}",
+											"description": "The namespace to use to locate this document."
+										}
+									]
+								},
+								"description": "Returns a Mythic Keystone dungeon by ID."
+							},
+							"response": []
+						},
+						{
+							"name": "Mythic Keystone Index",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{battle-net-host}}/data/wow/mythic-keystone/index?locale={{locale}}&access_token={{access-token}}&namespace={{wow.namespace}}",
+									"host": [
+										"{{battle-net-host}}"
+									],
+									"path": [
+										"data",
+										"wow",
+										"mythic-keystone",
+										"index"
+									],
+									"query": [
+										{
+											"key": "locale",
+											"value": "{{locale}}",
+											"description": "The locale to reflect in localized data."
+										},
+										{
+											"key": "access_token",
+											"value": "{{access-token}}"
+										},
+										{
+											"key": "namespace",
+											"value": "{{wow.namespace}}",
+											"description": "The namespace to use to locate this document."
+										}
+									]
+								},
+								"description": "Returns an index of links to other documents related to Mythic Keystone dungeons."
+							},
+							"response": []
+						},
+						{
+							"name": "Mythic Keystone Period Index",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{battle-net-host}}/data/wow/mythic-keystone/period/index?locale={{locale}}&access_token={{access-token}}&namespace={{wow.namespace}}",
+									"host": [
+										"{{battle-net-host}}"
+									],
+									"path": [
+										"data",
+										"wow",
+										"mythic-keystone",
+										"period",
+										"index"
+									],
+									"query": [
+										{
+											"key": "locale",
+											"value": "{{locale}}",
+											"description": "The locale to reflect in localized data."
+										},
+										{
+											"key": "access_token",
+											"value": "{{access-token}}"
+										},
+										{
+											"key": "namespace",
+											"value": "{{wow.namespace}}",
+											"description": "The namespace to use to locate this document."
+										}
+									]
+								},
+								"description": "Returns an index of Mythic Keystone periods."
+							},
+							"response": []
+						},
+						{
+							"name": "Mythic Keystone Period",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{battle-net-host}}/data/wow/mythic-keystone/period/{{wow.period-id}}?locale={{locale}}&access_token={{access-token}}&namespace={{wow.namespace}}",
+									"host": [
+										"{{battle-net-host}}"
+									],
+									"path": [
+										"data",
+										"wow",
+										"mythic-keystone",
+										"period",
+										"{{wow.period-id}}"
+									],
+									"query": [
+										{
+											"key": "locale",
+											"value": "{{locale}}",
+											"description": "The locale to reflect in localized data."
+										},
+										{
+											"key": "access_token",
+											"value": "{{access-token}}"
+										},
+										{
+											"key": "namespace",
+											"value": "{{wow.namespace}}",
+											"description": "The namespace to use to locate this document."
+										}
+									]
+								},
+								"description": "Returns a Mythic Keystone period by ID."
+							},
+							"response": []
+						},
+						{
+							"name": "Mythic Keystone Season Index",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{battle-net-host}}/data/wow/mythic-keystone/season/index?locale={{locale}}&access_token={{access-token}}&namespace={{wow.namespace}}",
+									"host": [
+										"{{battle-net-host}}"
+									],
+									"path": [
+										"data",
+										"wow",
+										"mythic-keystone",
+										"season",
+										"index"
+									],
+									"query": [
+										{
+											"key": "locale",
+											"value": "{{locale}}",
+											"description": "The locale to reflect in localized data."
+										},
+										{
+											"key": "access_token",
+											"value": "{{access-token}}"
+										},
+										{
+											"key": "namespace",
+											"value": "{{wow.namespace}}",
+											"description": "The namespace to use to locate this document."
+										}
+									]
+								},
+								"description": "Returns an index of Mythic Keystone seasons."
+							},
+							"response": []
+						},
+						{
+							"name": "Mythic Keystone Season",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{battle-net-host}}/data/wow/mythic-keystone/season/{{wow.season-id}}?locale={{locale}}&access_token={{access-token}}&namespace={{wow.namespace}}",
+									"host": [
+										"{{battle-net-host}}"
+									],
+									"path": [
+										"data",
+										"wow",
+										"mythic-keystone",
+										"season",
+										"{{wow.season-id}}"
+									],
+									"query": [
+										{
+											"key": "locale",
+											"value": "{{locale}}",
+											"description": "The locale to reflect in localized data."
+										},
+										{
+											"key": "access_token",
+											"value": "{{access-token}}"
+										},
+										{
+											"key": "namespace",
+											"value": "{{wow.namespace}}",
+											"description": "The namespace to use to locate this document."
+										}
+									]
+								},
+								"description": "Returns a Mythic Keystone season by ID."
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Mythic Keystone Leaderboard API",
+					"item": [
+						{
+							"name": "Mythic Leaderboard Index",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{battle-net-host}}/data/wow/connected-realm/{{wow.connected-realm-id}}/mythic-leaderboard/index?locale={{locale}}&access_token={{access-token}}&namespace={{wow.namespace}}",
+									"host": [
+										"{{battle-net-host}}"
+									],
+									"path": [
+										"data",
+										"wow",
+										"connected-realm",
+										"{{wow.connected-realm-id}}",
+										"mythic-leaderboard",
+										"index"
+									],
+									"query": [
+										{
+											"key": "locale",
+											"value": "{{locale}}",
+											"description": "The locale to reflect in localized data."
+										},
+										{
+											"key": "access_token",
+											"value": "{{access-token}}"
+										},
+										{
+											"key": "namespace",
+											"value": "{{wow.namespace}}",
+											"description": "The namespace to use to locate this document."
+										}
+									]
+								},
+								"description": "Returns an index of Mythic Keystone Leaderboard dungeon instances for a connected realm."
+							},
+							"response": []
+						},
+						{
+							"name": "Mythic Leaderboard",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{battle-net-host}}/data/wow/connected-realm/{{wow.connected-realm-id}}/mythic-leaderboard/{{wow.dungeon-id}}/period/{{wow.period-id}}?locale={{locale}}&access_token={{access-token}}&namespace={{wow.namespace}}",
+									"host": [
+										"{{battle-net-host}}"
+									],
+									"path": [
+										"data",
+										"wow",
+										"connected-realm",
+										"{{wow.connected-realm-id}}",
+										"mythic-leaderboard",
+										"{{wow.dungeon-id}}",
+										"period",
+										"{{wow.period-id}}"
+									],
+									"query": [
+										{
+											"key": "locale",
+											"value": "{{locale}}",
+											"description": "The locale to reflect in localized data."
+										},
+										{
+											"key": "access_token",
+											"value": "{{access-token}}"
+										},
+										{
+											"key": "namespace",
+											"value": "{{wow.namespace}}",
+											"description": "The namespace to use to locate this document."
+										}
+									]
+								},
+								"description": "Returns a weekly Mythic Keystone Leaderboard by period."
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Playable Class API",
+					"item": [
+						{
+							"name": "Playable Classes Index",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{battle-net-host}}/data/wow/playable-class/index?locale={{locale}}&access_token={{access-token}}&namespace={{wow.namespace-static}}",
+									"host": [
+										"{{battle-net-host}}"
+									],
+									"path": [
+										"data",
+										"wow",
+										"playable-class",
+										"index"
+									],
+									"query": [
+										{
+											"key": "locale",
+											"value": "{{locale}}",
+											"description": "The locale to reflect in localized data."
+										},
+										{
+											"key": "access_token",
+											"value": "{{access-token}}"
+										},
+										{
+											"key": "namespace",
+											"value": "{{wow.namespace-static}}",
+											"description": "The namespace to use to locate this document."
+										}
+									]
+								},
+								"description": "Returns an index of playable classes."
+							},
+							"response": []
+						},
+						{
+							"name": "Playable Class",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{battle-net-host}}/data/wow/playable-class/{{wow.class-id}}?locale={{locale}}&access_token={{access-token}}&namespace={{wow.namespace-static}}",
+									"host": [
+										"{{battle-net-host}}"
+									],
+									"path": [
+										"data",
+										"wow",
+										"playable-class",
+										"{{wow.class-id}}"
+									],
+									"query": [
+										{
+											"key": "locale",
+											"value": "{{locale}}",
+											"description": "The locale to reflect in localized data."
+										},
+										{
+											"key": "access_token",
+											"value": "{{access-token}}"
+										},
+										{
+											"key": "namespace",
+											"value": "{{wow.namespace-static}}",
+											"description": "The namespace to use to locate this document."
+										}
+									]
+								},
+								"description": "Returns a playable class by ID."
+							},
+							"response": []
+						},
+						{
+							"name": "Playable Class PVP Talent Slots",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{battle-net-host}}/data/wow/playable-class/{{wow.class-id}}/pvp-talent-slots?locale={{locale}}&access_token={{access-token}}&namespace={{wow.namespace-static}}",
+									"host": [
+										"{{battle-net-host}}"
+									],
+									"path": [
+										"data",
+										"wow",
+										"playable-class",
+										"{{wow.class-id}}",
+										"pvp-talent-slots"
+									],
+									"query": [
+										{
+											"key": "locale",
+											"value": "{{locale}}",
+											"description": "The locale to reflect in localized data."
+										},
+										{
+											"key": "access_token",
+											"value": "{{access-token}}"
+										},
+										{
+											"key": "namespace",
+											"value": "{{wow.namespace-static}}",
+											"description": "The namespace to use to locate this document."
+										}
+									]
+								},
+								"description": "Returns the PvP talent slots for a playable class by ID."
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Playable Specialization API",
+					"item": [
+						{
+							"name": "Playable Specialization Index",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{battle-net-host}}/data/wow/playable-specialization/index?locale={{locale}}&access_token={{access-token}}&namespace={{wow.namespace-static}}",
+									"host": [
+										"{{battle-net-host}}"
+									],
+									"path": [
+										"data",
+										"wow",
+										"playable-specialization",
+										"index"
+									],
+									"query": [
+										{
+											"key": "locale",
+											"value": "{{locale}}",
+											"description": "The locale to reflect in localized data."
+										},
+										{
+											"key": "access_token",
+											"value": "{{access-token}}"
+										},
+										{
+											"key": "namespace",
+											"value": "{{wow.namespace-static}}",
+											"description": "The namespace to use to locate this document."
+										}
+									]
+								},
+								"description": "Returns an index of playable specializations."
+							},
+							"response": []
+						},
+						{
+							"name": "Playable Specialization",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{battle-net-host}}/data/wow/playable-specialization/{{wow.specialization-id}}?locale={{locale}}&access_token={{access-token}}&namespace={{wow.namespace-static}}",
+									"host": [
+										"{{battle-net-host}}"
+									],
+									"path": [
+										"data",
+										"wow",
+										"playable-specialization",
+										"{{wow.specialization-id}}"
+									],
+									"query": [
+										{
+											"key": "locale",
+											"value": "{{locale}}",
+											"description": "The locale to reflect in localized data."
+										},
+										{
+											"key": "access_token",
+											"value": "{{access-token}}"
+										},
+										{
+											"key": "namespace",
+											"value": "{{wow.namespace-static}}",
+											"description": "The namespace to use to locate this document."
+										}
+									]
+								},
+								"description": "Returns an index of playable specializations."
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Power Type API",
+					"item": [
+						{
+							"name": "Power Type Index",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{battle-net-host}}/data/wow/power-type/index?locale={{locale}}&access_token={{access-token}}&namespace={{wow.namespace-static}}",
+									"host": [
+										"{{battle-net-host}}"
+									],
+									"path": [
+										"data",
+										"wow",
+										"power-type",
+										"index"
+									],
+									"query": [
+										{
+											"key": "locale",
+											"value": "{{locale}}",
+											"description": "The locale to reflect in localized data."
+										},
+										{
+											"key": "access_token",
+											"value": "{{access-token}}"
+										},
+										{
+											"key": "namespace",
+											"value": "{{wow.namespace-static}}",
+											"description": "The namespace to use to locate this document."
+										}
+									]
+								},
+								"description": "Returns an index of power types."
+							},
+							"response": []
+						},
+						{
+							"name": "Power Type",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{battle-net-host}}/data/wow/power-type/{{wow.power-type-id}}?locale={{locale}}&access_token={{access-token}}&namespace={{wow.namespace-static}}",
+									"host": [
+										"{{battle-net-host}}"
+									],
+									"path": [
+										"data",
+										"wow",
+										"power-type",
+										"{{wow.power-type-id}}"
+									],
+									"query": [
+										{
+											"key": "locale",
+											"value": "{{locale}}",
+											"description": "The locale to reflect in localized data."
+										},
+										{
+											"key": "access_token",
+											"value": "{{access-token}}"
+										},
+										{
+											"key": "namespace",
+											"value": "{{wow.namespace-static}}",
+											"description": "The namespace to use to locate this document."
+										}
+									]
+								},
+								"description": "Returns a power type by ID."
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Playable Race API",
+					"item": [
+						{
+							"name": "Races Index",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{battle-net-host}}/data/wow/race/index?locale={{locale}}&access_token={{access-token}}&namespace={{wow.namespace-static}}",
+									"host": [
+										"{{battle-net-host}}"
+									],
+									"path": [
+										"data",
+										"wow",
+										"race",
+										"index"
+									],
+									"query": [
+										{
+											"key": "locale",
+											"value": "{{locale}}",
+											"description": "The locale to reflect in localized data."
+										},
+										{
+											"key": "access_token",
+											"value": "{{access-token}}"
+										},
+										{
+											"key": "namespace",
+											"value": "{{wow.namespace-static}}",
+											"description": "The namespace to use to locate this document."
+										}
+									]
+								},
+								"description": "Returns an index of races."
+							},
+							"response": []
+						},
+						{
+							"name": "Race",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{battle-net-host}}/data/wow/race/{{wow.race-id}}?locale={{locale}}&access_token={{access-token}}&namespace={{wow.namespace-static}}",
+									"host": [
+										"{{battle-net-host}}"
+									],
+									"path": [
+										"data",
+										"wow",
+										"race",
+										"{{wow.race-id}}"
+									],
+									"query": [
+										{
+											"key": "locale",
+											"value": "{{locale}}",
+											"description": "The locale to reflect in localized data."
+										},
+										{
+											"key": "access_token",
+											"value": "{{access-token}}"
+										},
+										{
+											"key": "namespace",
+											"value": "{{wow.namespace-static}}",
+											"description": "The namespace to use to locate this document."
+										}
+									]
+								},
+								"description": "Returns a race by ID."
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Realm API",
+					"item": [
+						{
+							"name": "Realm Index",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{battle-net-host}}/data/wow/realm/index?locale={{locale}}&access_token={{access-token}}&namespace={{wow.namespace}}",
+									"host": [
+										"{{battle-net-host}}"
+									],
+									"path": [
+										"data",
+										"wow",
+										"realm",
+										"index"
+									],
+									"query": [
+										{
+											"key": "locale",
+											"value": "{{locale}}",
+											"description": "The locale to reflect in localized data."
+										},
+										{
+											"key": "access_token",
+											"value": "{{access-token}}"
+										},
+										{
+											"key": "namespace",
+											"value": "{{wow.namespace}}",
+											"description": "The namespace to use to locate this document."
+										}
+									]
+								},
+								"description": "Returns an index of realms."
+							},
+							"response": []
+						},
+						{
+							"name": "Realm",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{battle-net-host}}/data/wow/realm/{{wow.realm}}?locale={{locale}}&access_token={{access-token}}&namespace={{wow.namespace}}",
+									"host": [
+										"{{battle-net-host}}"
+									],
+									"path": [
+										"data",
+										"wow",
+										"realm",
+										"{{wow.realm}}"
+									],
+									"query": [
+										{
+											"key": "locale",
+											"value": "{{locale}}",
+											"description": "The locale to reflect in localized data."
+										},
+										{
+											"key": "access_token",
+											"value": "{{access-token}}"
+										},
+										{
+											"key": "namespace",
+											"value": "{{wow.namespace}}",
+											"description": "The namespace to use to locate this document."
+										}
+									]
+								},
+								"description": "Returns a single realm by slug or ID."
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Region API",
+					"item": [
+						{
+							"name": "Region Index",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{battle-net-host}}/data/wow/region/index?locale={{locale}}&access_token={{access-token}}&namespace={{wow.namespace}}",
+									"host": [
+										"{{battle-net-host}}"
+									],
+									"path": [
+										"data",
+										"wow",
+										"region",
+										"index"
+									],
+									"query": [
+										{
+											"key": "locale",
+											"value": "{{locale}}",
+											"description": "The locale to reflect in localized data."
+										},
+										{
+											"key": "access_token",
+											"value": "{{access-token}}"
+										},
+										{
+											"key": "namespace",
+											"value": "{{wow.namespace}}",
+											"description": "The namespace to use to locate this document."
+										}
+									]
+								},
+								"description": "Returns an index of regions."
+							},
+							"response": []
+						},
+						{
+							"name": "Region",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{battle-net-host}}/data/wow/region/{{wow.region-id}}?locale={{locale}}&access_token={{access-token}}&namespace={{wow.namespace}}",
+									"host": [
+										"{{battle-net-host}}"
+									],
+									"path": [
+										"data",
+										"wow",
+										"region",
+										"{{wow.region-id}}"
+									],
+									"query": [
+										{
+											"key": "locale",
+											"value": "{{locale}}",
+											"description": "The locale to reflect in localized data."
+										},
+										{
+											"key": "access_token",
+											"value": "{{access-token}}"
+										},
+										{
+											"key": "namespace",
+											"value": "{{wow.namespace}}",
+											"description": "The namespace to use to locate this document."
+										}
+									]
+								},
+								"description": "Returns an index of regions."
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "WoW Token API",
+					"item": [
+						{
+							"name": "Token Index",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{battle-net-host}}/data/wow/token/?locale={{locale}}&access_token={{access-token}}&namespace={{wow.namespace}}",
+									"host": [
+										"{{battle-net-host}}"
+									],
+									"path": [
+										"data",
+										"wow",
+										"token",
+										""
+									],
+									"query": [
+										{
+											"key": "locale",
+											"value": "{{locale}}",
+											"description": "The locale to reflect in localized data."
+										},
+										{
+											"key": "access_token",
+											"value": "{{access-token}}"
+										},
+										{
+											"key": "namespace",
+											"value": "{{wow.namespace}}",
+											"description": "The namespace to use to locate this document."
+										}
+									]
+								},
+								"description": "Returns the WoW Token index."
+							},
+							"response": []
+						}
+					],
+					"auth": {
+						"type": "noauth"
+					},
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "c9808b3d-a9f3-4e8f-9809-ba9630e13ca4",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "8a268f33-43dc-49a6-a3f0-f5c7748ca3f3",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					],
+					"_postman_isSubFolder": true
+				}
+			],
+			"description": "Endpoints for World of Warcraft Mythics, realms, and other game information.\n\nHosts: note that Blizzard API request paths follow this format: `{region}.api.blizzard.com/{API path}` (or `gateway.battlenet.com.cn/{API path}` for China). For more information, see the [Getting Started guide](https://develop.battle.net/documentation/guides/getting-started).\n\n**Namespaces**: World of Warcraft Game Data APIs require a namespace as part of the request. Each endpoint below lists the correct namespace to use as a parameter. Namespaces can be submitted as headers (Battlenet-Namespace: {namespace}) or as query parameters (?namespace={namespace}). [See Game Data APIs](https://develop.battle.net/documentation/guides/game-data-apis) for more details.",
+			"auth": {
+				"type": "noauth"
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "d05c2de6-070a-47d9-95f1-af1768990fa8",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "cafd1b0d-cff1-406e-97ed-f5f1b4338bdf",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Profile APIs",
+			"item": [
+				{
+					"name": "WoW Mythic Keystone Character Profile API",
+					"item": [
+						{
+							"name": "Character Mythic Keystone Profile",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{battle-net-host}}/profile/wow/character/{{wow.realm}}/{{wow.character}}/mythic-keystone-profile?locale={{locale}}&access_token={{access-token}}&namespace={{wow.namespace-profile}}",
+									"host": [
+										"{{battle-net-host}}"
+									],
+									"path": [
+										"profile",
+										"wow",
+										"character",
+										"{{wow.realm}}",
+										"{{wow.character}}",
+										"mythic-keystone-profile"
+									],
+									"query": [
+										{
+											"key": "locale",
+											"value": "{{locale}}",
+											"description": "The locale to reflect in localized data."
+										},
+										{
+											"key": "access_token",
+											"value": "{{access-token}}"
+										},
+										{
+											"key": "namespace",
+											"value": "{{wow.namespace-profile}}",
+											"description": "The namespace to use to locate this document."
+										}
+									]
+								},
+								"description": "Returns a Mythic Keystone Profile index for a character."
+							},
+							"response": []
+						},
+						{
+							"name": "Character Mythic Keystone Profile Season",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{battle-net-host}}/profile/wow/character/{{wow.realm}}/{{wow.character}}/mythic-keystone-profile/season/{{wow.season-id}}?locale={{locale}}&access_token={{access-token}}&namespace={{wow.namespace-profile}}",
+									"host": [
+										"{{battle-net-host}}"
+									],
+									"path": [
+										"profile",
+										"wow",
+										"character",
+										"{{wow.realm}}",
+										"{{wow.character}}",
+										"mythic-keystone-profile",
+										"season",
+										"{{wow.season-id}}"
+									],
+									"query": [
+										{
+											"key": "locale",
+											"value": "{{locale}}",
+											"description": "The locale to reflect in localized data."
+										},
+										{
+											"key": "access_token",
+											"value": "{{access-token}}"
+										},
+										{
+											"key": "namespace",
+											"value": "{{wow.namespace-profile}}",
+											"description": "The namespace to use to locate this document."
+										}
+									]
+								},
+								"description": "Returns a Mythic Keystone Profile index for a character.\n\n**Note**: this request returns a 404 for characters that have not completed a Mythic Keystone dungeon."
+							},
+							"response": []
+						}
+					],
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "3212de63-ec55-4d02-a13d-799d8a6f99e1",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "73a5be5d-0cdd-4346-be9a-d51590ef29c9",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					],
+					"_postman_isSubFolder": true
+				}
+			],
+			"description": "Endpoints for World of Warcraft character profiles, including Mythic Keystone profiles and seasonal profiles.\n\n**Hosts**: note that Blizzard API request paths follow this format: `{region}.api.blizzard.com/{API path}` (or `gateway.battlenet.com.cn/{API path}` for China). For more information, see the [Getting Started guide](https://develop.battle.net/documentation/guides/getting-started).\n\n**Namespaces**: World of Warcraft Game Data APIs require a namespace as part of the request. Each endpoint below lists the correct namespace to use as a parameter. Namespaces can be submitted as headers (**Battlenet-Namespace: {namespace}**) or as query parameters (**?namespace={namespace}**). See [Game Data APIs](https://develop.battle.net/documentation/guides/game-data-apis) for more details.",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "dd872aa9-3b57-462d-982e-1da0da9b7551",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "0c17974a-818b-401a-8654-aec98b3a5618",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		}
+	]
+}

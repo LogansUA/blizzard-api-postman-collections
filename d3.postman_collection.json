@@ -1,0 +1,874 @@
+{
+	"info": {
+		"_postman_id": "e4b076af-a770-4739-b21a-65241dc706ad",
+		"name": "Diablo III",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Community APIs",
+			"item": [
+				{
+					"name": "Act API",
+					"item": [
+						{
+							"name": "Act Index",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{battle-net-host}}/d3/data/act?locale={{locale}}&access_token={{access-token}}",
+									"host": [
+										"{{battle-net-host}}"
+									],
+									"path": [
+										"d3",
+										"data",
+										"act"
+									],
+									"query": [
+										{
+											"key": "locale",
+											"value": "{{locale}}",
+											"description": "The locale to reflect in localized data."
+										},
+										{
+											"key": "access_token",
+											"value": "{{access-token}}"
+										}
+									]
+								},
+								"description": "Returns an index of acts."
+							},
+							"response": []
+						},
+						{
+							"name": "Act",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{battle-net-host}}/d3/data/act/{{d3.act-id}}?locale={{locale}}&access_token={{access-token}}",
+									"host": [
+										"{{battle-net-host}}"
+									],
+									"path": [
+										"d3",
+										"data",
+										"act",
+										"{{d3.act-id}}"
+									],
+									"query": [
+										{
+											"key": "locale",
+											"value": "{{locale}}",
+											"description": "The locale to reflect in localized data."
+										},
+										{
+											"key": "access_token",
+											"value": "{{access-token}}"
+										}
+									]
+								},
+								"description": "Returns a single act by ID."
+							},
+							"response": []
+						}
+					],
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "e61f7ab5-ab95-41a2-8b0e-3be7541dc45b",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "f5487a88-fb32-4d2f-ba98-7e6574b83c95",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Artisan and Recipe API",
+					"item": [
+						{
+							"name": "Artisan",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{battle-net-host}}/d3/data/artisan/{{d3.artisan-slug}}?locale={{locale}}&access_token={{access-token}}",
+									"host": [
+										"{{battle-net-host}}"
+									],
+									"path": [
+										"d3",
+										"data",
+										"artisan",
+										"{{d3.artisan-slug}}"
+									],
+									"query": [
+										{
+											"key": "locale",
+											"value": "{{locale}}",
+											"description": "The locale to reflect in localized data."
+										},
+										{
+											"key": "access_token",
+											"value": "{{access-token}}"
+										}
+									]
+								},
+								"description": "Returns a single artisan by slug."
+							},
+							"response": []
+						},
+						{
+							"name": "Recipe",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{battle-net-host}}/d3/data/artisan/{{d3.artisan-slug}}/recipe/{{d3.recipe-slug}}?locale={{locale}}&access_token={{access-token}}",
+									"host": [
+										"{{battle-net-host}}"
+									],
+									"path": [
+										"d3",
+										"data",
+										"artisan",
+										"{{d3.artisan-slug}}",
+										"recipe",
+										"{{d3.recipe-slug}}"
+									],
+									"query": [
+										{
+											"key": "locale",
+											"value": "{{locale}}"
+										},
+										{
+											"key": "access_token",
+											"value": "{{access-token}}"
+										}
+									]
+								},
+								"description": "Returns a single recipe by slug for the specified artisan."
+							},
+							"response": []
+						}
+					],
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "4b986e63-3a0b-456a-b29d-8197fe87bea8",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "070abbed-fcca-4ca3-87f8-7d9d2ea03f8d",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Follower API",
+					"item": [
+						{
+							"name": "Follower",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{battle-net-host}}/d3/data/follower/{{d3.follower-slug}}?locale={{locale}}&access_token={{access-token}}",
+									"host": [
+										"{{battle-net-host}}"
+									],
+									"path": [
+										"d3",
+										"data",
+										"follower",
+										"{{d3.follower-slug}}"
+									],
+									"query": [
+										{
+											"key": "locale",
+											"value": "{{locale}}",
+											"description": "The locale to reflect in localized data."
+										},
+										{
+											"key": "access_token",
+											"value": "{{access-token}}"
+										}
+									]
+								},
+								"description": "Returns a single follower by slug."
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Character Class and Skill API",
+					"item": [
+						{
+							"name": "Character Class",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{battle-net-host}}/d3/data/hero/{{d3.class-slug}}?locale={{locale}}&access_token={{access-token}}",
+									"host": [
+										"{{battle-net-host}}"
+									],
+									"path": [
+										"d3",
+										"data",
+										"hero",
+										"{{d3.class-slug}}"
+									],
+									"query": [
+										{
+											"key": "locale",
+											"value": "{{locale}}",
+											"description": "The locale to reflect in localized data."
+										},
+										{
+											"key": "access_token",
+											"value": "{{access-token}}"
+										}
+									]
+								},
+								"description": "Returns a single character class by slug."
+							},
+							"response": []
+						},
+						{
+							"name": "Skill",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{battle-net-host}}/d3/data/hero/{{d3.class-slug}}/skill/{{d3.skill-slug}}?locale={{locale}}&access_token={{access-token}}",
+									"host": [
+										"{{battle-net-host}}"
+									],
+									"path": [
+										"d3",
+										"data",
+										"hero",
+										"{{d3.class-slug}}",
+										"skill",
+										"{{d3.skill-slug}}"
+									],
+									"query": [
+										{
+											"key": "locale",
+											"value": "{{locale}}",
+											"description": "The locale to reflect in localized data."
+										},
+										{
+											"key": "access_token",
+											"value": "{{access-token}}"
+										}
+									]
+								},
+								"description": "Returns a single skill by slug for a specific character class."
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Item Type API",
+					"item": [
+						{
+							"name": "Item Type Index",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{battle-net-host}}/d3/data/item-type?locale={{locale}}&access_token={{access-token}}",
+									"host": [
+										"{{battle-net-host}}"
+									],
+									"path": [
+										"d3",
+										"data",
+										"item-type"
+									],
+									"query": [
+										{
+											"key": "locale",
+											"value": "{{locale}}",
+											"description": "The locale to reflect in localized data."
+										},
+										{
+											"key": "access_token",
+											"value": "{{access-token}}"
+										}
+									]
+								},
+								"description": "Returns an index of item types."
+							},
+							"response": []
+						},
+						{
+							"name": "Item Type",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{battle-net-host}}/d3/data/item-type/{{d3.item-type-slug}}?locale={{locale}}&access_token={{access-token}}",
+									"host": [
+										"{{battle-net-host}}"
+									],
+									"path": [
+										"d3",
+										"data",
+										"item-type",
+										"{{d3.item-type-slug}}"
+									],
+									"query": [
+										{
+											"key": "locale",
+											"value": "{{locale}}",
+											"description": "The locale to reflect in localized data."
+										},
+										{
+											"key": "access_token",
+											"value": "{{access-token}}"
+										}
+									]
+								},
+								"description": "Returns a single item type by slug."
+							},
+							"response": []
+						}
+					],
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "126646ea-6cab-43e6-b45e-28567afb2ec9",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "941081d5-2d20-4054-85de-19e78dc90e0d",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Item API",
+					"item": [
+						{
+							"name": "Item",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{battle-net-host}}/d3/data/item/{{d3.item-slug-and-id}}?locale={{locale}}&access_token={{access-token}}",
+									"host": [
+										"{{battle-net-host}}"
+									],
+									"path": [
+										"d3",
+										"data",
+										"item",
+										"{{d3.item-slug-and-id}}"
+									],
+									"query": [
+										{
+											"key": "locale",
+											"value": "{{locale}}",
+											"description": "The locale to reflect in localized data."
+										},
+										{
+											"key": "access_token",
+											"value": "{{access-token}}"
+										}
+									]
+								},
+								"description": "Returns a single item by item slug and ID."
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Profile API",
+					"item": [
+						{
+							"name": "Account",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{battle-net-host}}/d3/profile/{{d3.profile-battle-tag}}?locale={{locale}}&access_token={{access-token}}",
+									"host": [
+										"{{battle-net-host}}"
+									],
+									"path": [
+										"d3",
+										"profile",
+										"{{d3.profile-battle-tag}}"
+									],
+									"query": [
+										{
+											"key": "locale",
+											"value": "{{locale}}"
+										},
+										{
+											"key": "access_token",
+											"value": "{{access-token}}"
+										}
+									]
+								},
+								"description": "Returns the specified account profile."
+							},
+							"response": []
+						},
+						{
+							"name": "Detail Hero",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{battle-net-host}}/d3/profile/{{d3.profile-battle-tag}}/hero/{{d3.profile-hero-id}}?locale={{locale}}&access_token={{access-token}}",
+									"host": [
+										"{{battle-net-host}}"
+									],
+									"path": [
+										"d3",
+										"profile",
+										"{{d3.profile-battle-tag}}",
+										"hero",
+										"{{d3.profile-hero-id}}"
+									],
+									"query": [
+										{
+											"key": "locale",
+											"value": "{{locale}}"
+										},
+										{
+											"key": "access_token",
+											"value": "{{access-token}}"
+										}
+									]
+								},
+								"description": "Returns a single hero."
+							},
+							"response": []
+						},
+						{
+							"name": "Detail Hero Items",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{battle-net-host}}/d3/profile/{{d3.profile-battle-tag}}/hero/{{d3.profile-hero-id}}/items?locale={{locale}}&access_token={{access-token}}",
+									"host": [
+										"{{battle-net-host}}"
+									],
+									"path": [
+										"d3",
+										"profile",
+										"{{d3.profile-battle-tag}}",
+										"hero",
+										"{{d3.profile-hero-id}}",
+										"items"
+									],
+									"query": [
+										{
+											"key": "locale",
+											"value": "{{locale}}"
+										},
+										{
+											"key": "access_token",
+											"value": "{{access-token}}"
+										}
+									]
+								},
+								"description": "Returns a list of items for the specified hero."
+							},
+							"response": []
+						},
+						{
+							"name": "Detail Follower Items",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{battle-net-host}}/d3/profile/{{d3.profile-battle-tag}}/hero/{{d3.profile-hero-id}}/follower-items?locale={{locale}}&access_token={{access-token}}",
+									"host": [
+										"{{battle-net-host}}"
+									],
+									"path": [
+										"d3",
+										"profile",
+										"{{d3.profile-battle-tag}}",
+										"hero",
+										"{{d3.profile-hero-id}}",
+										"follower-items"
+									],
+									"query": [
+										{
+											"key": "locale",
+											"value": "{{locale}}"
+										},
+										{
+											"key": "access_token",
+											"value": "{{access-token}}"
+										}
+									]
+								},
+								"description": "Returns a list of items for the specified hero's followers."
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				}
+			],
+			"description": "Endpoints for Diablo III player profiles.\n\n**Diablo III Icons**: Developers can fetch the images referenced by the D3 APIs with this URL template: **http://media.blizzard.com/d3/icons/<type>/<size>/<icon>.png**.\n\n* **<type>** depends on the type of resource referenced; it can either be **items** or **skills**.\n* **<size>** for *items* must either be **small** or **large**.\n* **<size>** for *skills* must be **21**, **42**, or **64**. These values refer to the image size in pixels.\n**Hosts**: note that Blizzard API request paths follow this format: `{region}.api.blizzard.com/{API path}` (or `gateway.battlenet.com.cn/{API path}` for China). For more information, see the [Getting Started guide](https://develop.battle.net/documentation/guides/getting-started).\n\n",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "94138d31-9735-40ab-802a-893c2928ec37",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "3573727d-5bd0-4845-9082-3b04395f937d",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Game Data APIs",
+			"item": [
+				{
+					"name": "D3",
+					"item": [
+						{
+							"name": "Season Index",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{battle-net-host}}/data/d3/season/?access_token={{access-token}}",
+									"host": [
+										"{{battle-net-host}}"
+									],
+									"path": [
+										"data",
+										"d3",
+										"season",
+										""
+									],
+									"query": [
+										{
+											"key": "access_token",
+											"value": "{{access-token}}"
+										}
+									]
+								},
+								"description": "Returns an index of available seasons."
+							},
+							"response": []
+						},
+						{
+							"name": "Season",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{battle-net-host}}/data/d3/season/{{d3.season-id}}?access_token={{access-token}}",
+									"host": [
+										"{{battle-net-host}}"
+									],
+									"path": [
+										"data",
+										"d3",
+										"season",
+										"{{d3.season-id}}"
+									],
+									"query": [
+										{
+											"key": "access_token",
+											"value": "{{access-token}}"
+										}
+									]
+								},
+								"description": "Returns a leaderboard list for the specified season."
+							},
+							"response": []
+						},
+						{
+							"name": "Season Leaderboard",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{battle-net-host}}/data/d3/season/{{d3.season-id}}/leaderboard/{{d3.leaderboard}}?access_token={{access-token}}",
+									"host": [
+										"{{battle-net-host}}"
+									],
+									"path": [
+										"data",
+										"d3",
+										"season",
+										"{{d3.season-id}}",
+										"leaderboard",
+										"{{d3.leaderboard}}"
+									],
+									"query": [
+										{
+											"key": "access_token",
+											"value": "{{access-token}}"
+										}
+									]
+								},
+								"description": "Returns a leaderboard list for the specified season."
+							},
+							"response": []
+						},
+						{
+							"name": "Era Index",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{battle-net-host}}/data/d3/era/?access_token={{access-token}}",
+									"host": [
+										"{{battle-net-host}}"
+									],
+									"path": [
+										"data",
+										"d3",
+										"era",
+										""
+									],
+									"query": [
+										{
+											"key": "access_token",
+											"value": "{{access-token}}"
+										}
+									]
+								},
+								"description": "Returns an index of available eras."
+							},
+							"response": []
+						},
+						{
+							"name": "Era",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{battle-net-host}}/data/d3/era/{{d3.era-id}}?access_token={{access-token}}",
+									"host": [
+										"{{battle-net-host}}"
+									],
+									"path": [
+										"data",
+										"d3",
+										"era",
+										"{{d3.era-id}}"
+									],
+									"query": [
+										{
+											"key": "access_token",
+											"value": "{{access-token}}"
+										}
+									]
+								},
+								"description": "Returns a leaderboard list for a particular era."
+							},
+							"response": []
+						},
+						{
+							"name": "Era Leaderboard",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{battle-net-host}}/data/d3/era/{{d3.era-id}}/leaderboard/{{d3.leaderboard}}?access_token={{access-token}}",
+									"host": [
+										"{{battle-net-host}}"
+									],
+									"path": [
+										"data",
+										"d3",
+										"era",
+										"{{d3.era-id}}",
+										"leaderboard",
+										"{{d3.leaderboard}}"
+									],
+									"query": [
+										{
+											"key": "access_token",
+											"value": "{{access-token}}"
+										}
+									]
+								},
+								"description": "Returns the specified leaderboard for the specified era."
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				}
+			],
+			"description": "Endpoints for Diablo III seasons and eras.\n\n**Hosts**: note that Blizzard API request paths follow this format: `{region}.api.blizzard.com/{API path}` (or `gateway.battlenet.com.cn/{API path}` for China). For more information, see the [Getting Started guide](https://develop.battle.net/documentation/guides/getting-started).",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "acb61aac-b624-46df-ac9d-989fa2a2b5b6",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "efa8be4f-ff64-4590-818f-1bade0e8e914",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		}
+	]
+}

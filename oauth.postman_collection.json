@@ -1,0 +1,288 @@
+{
+	"info": {
+		"_postman_id": "d53e47e6-3766-4380-ad5e-8dfbf65c07e6",
+		"name": "OAuth",
+		"description": "This page describes the APIs used for Blizzard's OAuth 2.0 authentication flows. User Authentication describes the authentication code flow, which allows applications to authenticate a user and perform API requests on their behalf. Server Authentication describes the client credentials flow, which allows applications to authenticate with Blizzard's servers and perform requests as a client application.\n\nSee the [Using OAuth](https://develop.battle.net/documentation/guides/using-oauth) page for detailed information about making requests, including host names.\n\nHosts: note that Blizzard API request paths follow this format: `{region}.battle.net/{API path}` for OAuth requests (or `www.battlenet.com.cn/{API path}` for OAuth requests in China). For more information, see the [Getting Started guide](https://develop.battle.net/documentation/guides/getting-started).",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "User Authentication",
+			"item": [
+				{
+					"name": "User Info (param)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "2e26a1a5-a934-4eac-a336-e81a256782fe",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "{{auth-uri}}/oauth/userinfo?access_token={{access-token}}",
+							"host": [
+								"{{auth-uri}}"
+							],
+							"path": [
+								"oauth",
+								"userinfo"
+							],
+							"query": [
+								{
+									"key": "access_token",
+									"value": "{{access-token}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User Info (header)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "2e26a1a5-a934-4eac-a336-e81a256782fe",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access-token}}",
+								"type": "text"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "{{auth-uri}}/oauth/userinfo",
+							"host": [
+								"{{auth-uri}}"
+							],
+							"path": [
+								"oauth",
+								"userinfo"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Application Authentication",
+			"item": [
+				{
+					"name": "Access Token Request",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "2e26a1a5-a934-4eac-a336-e81a256782fe",
+								"exec": [
+									"const jsonData = pm.response.json();",
+									"",
+									"pm.environment.set(\"access-token\", jsonData.access_token);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "{{client-secret}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{client-id}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "grant_type",
+									"value": "client_credentials",
+									"type": "text"
+								},
+								{
+									"key": "scope",
+									"value": "wow.profile",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{auth-uri}}/oauth/token",
+							"host": [
+								"{{auth-uri}}"
+							],
+							"path": [
+								"oauth",
+								"token"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Token validation",
+			"item": [
+				{
+					"name": "Token Validation (header)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "2e26a1a5-a934-4eac-a336-e81a256782fe",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access-token}}",
+								"type": "text"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "{{auth-uri}}/oauth/check_token",
+							"host": [
+								"{{auth-uri}}"
+							],
+							"path": [
+								"oauth",
+								"check_token"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Token Validation (param)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "2e26a1a5-a934-4eac-a336-e81a256782fe",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "{{auth-uri}}/oauth/check_token?token={{access-token}}",
+							"host": [
+								"{{auth-uri}}"
+							],
+							"path": [
+								"oauth",
+								"check_token"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{access-token}}"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "3e1a1c5b-4e4a-4bb7-8b94-876117cb398e",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "0f80b343-14e0-4209-a9a4-fb21da377d0c",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}

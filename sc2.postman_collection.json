@@ -1,0 +1,607 @@
+{
+	"info": {
+		"_postman_id": "53c1bf4f-fe3f-40f1-8db6-31ca73cd5a5d",
+		"name": "StarCraft II",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Community APIs",
+			"item": [
+				{
+					"name": "Profile API",
+					"item": [
+						{
+							"name": "Static",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{battle-net-host}}/sc2/static/profile/{{sc2.region-id}}?locale={{locale}}&access_token={{access-token}}",
+									"host": [
+										"{{battle-net-host}}"
+									],
+									"path": [
+										"sc2",
+										"static",
+										"profile",
+										"{{sc2.region-id}}"
+									],
+									"query": [
+										{
+											"key": "locale",
+											"value": "{{locale}}",
+											"description": "The locale to reflect in localized data."
+										},
+										{
+											"key": "access_token",
+											"value": "{{access-token}}"
+										}
+									]
+								},
+								"description": "Returns all static SC2 profile data (achievements, categories, criteria, and rewards)."
+							},
+							"response": []
+						},
+						{
+							"name": "Metadata",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{battle-net-host}}/sc2/metadata/profile/{{sc2.region-id}}/{{sc2.realm-id}}/{{sc2.profile-id}}?locale={{locale}}&access_token={{access-token}}",
+									"host": [
+										"{{battle-net-host}}"
+									],
+									"path": [
+										"sc2",
+										"metadata",
+										"profile",
+										"{{sc2.region-id}}",
+										"{{sc2.realm-id}}",
+										"{{sc2.profile-id}}"
+									],
+									"query": [
+										{
+											"key": "locale",
+											"value": "{{locale}}",
+											"description": "The locale to reflect in localized data."
+										},
+										{
+											"key": "access_token",
+											"value": "{{access-token}}"
+										}
+									]
+								},
+								"description": "Returns metadata for an individual's profile."
+							},
+							"response": []
+						},
+						{
+							"name": "Profile",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{battle-net-host}}/sc2/profile/{{sc2.region-id}}/{{sc2.realm-id}}/{{sc2.profile-id}}?locale={{locale}}&access_token={{access-token}}",
+									"host": [
+										"{{battle-net-host}}"
+									],
+									"path": [
+										"sc2",
+										"profile",
+										"{{sc2.region-id}}",
+										"{{sc2.realm-id}}",
+										"{{sc2.profile-id}}"
+									],
+									"query": [
+										{
+											"key": "locale",
+											"value": "{{locale}}",
+											"description": "The locale to reflect in localized data."
+										},
+										{
+											"key": "access_token",
+											"value": "{{access-token}}"
+										}
+									]
+								},
+								"description": "Returns data about an individual SC2 profile."
+							},
+							"response": []
+						},
+						{
+							"name": "Ladder Summary",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{battle-net-host}}/sc2/profile/{{sc2.region-id}}/{{sc2.realm-id}}/{{sc2.profile-id}}/ladder/summary?locale={{locale}}&access_token={{access-token}}",
+									"host": [
+										"{{battle-net-host}}"
+									],
+									"path": [
+										"sc2",
+										"profile",
+										"{{sc2.region-id}}",
+										"{{sc2.realm-id}}",
+										"{{sc2.profile-id}}",
+										"ladder",
+										"summary"
+									],
+									"query": [
+										{
+											"key": "locale",
+											"value": "{{locale}}",
+											"description": "The locale to reflect in localized data."
+										},
+										{
+											"key": "access_token",
+											"value": "{{access-token}}"
+										}
+									]
+								},
+								"description": "Returns a ladder summary for an individual SC2 profile."
+							},
+							"response": []
+						},
+						{
+							"name": "Ladder",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{battle-net-host}}/sc2/profile/{{sc2.region-id}}/{{sc2.realm-id}}/{{sc2.profile-id}}/ladder/{{sc2.ladder-id}}?locale={{locale}}&access_token={{access-token}}",
+									"host": [
+										"{{battle-net-host}}"
+									],
+									"path": [
+										"sc2",
+										"profile",
+										"{{sc2.region-id}}",
+										"{{sc2.realm-id}}",
+										"{{sc2.profile-id}}",
+										"ladder",
+										"{{sc2.ladder-id}}"
+									],
+									"query": [
+										{
+											"key": "locale",
+											"value": "{{locale}}",
+											"description": "The locale to reflect in localized data."
+										},
+										{
+											"key": "access_token",
+											"value": "{{access-token}}"
+										}
+									]
+								},
+								"description": "Returns data about an individual profile's ladder."
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Ladder API",
+					"item": [
+						{
+							"name": "Grandmaster Leaderboard",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{battle-net-host}}/sc2/ladder/grandmaster/{{sc2.region-id}}?locale={{locale}}&access_token={{access-token}}",
+									"host": [
+										"{{battle-net-host}}"
+									],
+									"path": [
+										"sc2",
+										"ladder",
+										"grandmaster",
+										"{{sc2.region-id}}"
+									],
+									"query": [
+										{
+											"key": "locale",
+											"value": "{{locale}}",
+											"description": "The locale to reflect in localized data."
+										},
+										{
+											"key": "access_token",
+											"value": "{{access-token}}"
+										}
+									]
+								},
+								"description": "Returns ladder data for the current season's grandmaster leaderboard."
+							},
+							"response": []
+						},
+						{
+							"name": "Season",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{battle-net-host}}/sc2/ladder/season/{{sc2.region-id}}?locale={{locale}}&access_token={{access-token}}",
+									"host": [
+										"{{battle-net-host}}"
+									],
+									"path": [
+										"sc2",
+										"ladder",
+										"season",
+										"{{sc2.region-id}}"
+									],
+									"query": [
+										{
+											"key": "locale",
+											"value": "{{locale}}",
+											"description": "The locale to reflect in localized data."
+										},
+										{
+											"key": "access_token",
+											"value": "{{access-token}}"
+										}
+									]
+								},
+								"description": "Returns data about the current season."
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Account API",
+					"item": [
+						{
+							"name": "Player",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{battle-net-host}}/sc2/player/{{sc2.account-id}}?locale={{locale}}&access_token={{access-token}}",
+									"host": [
+										"{{battle-net-host}}"
+									],
+									"path": [
+										"sc2",
+										"player",
+										"{{sc2.account-id}}"
+									],
+									"query": [
+										{
+											"key": "locale",
+											"value": "{{locale}}",
+											"description": "The locale to reflect in localized data."
+										},
+										{
+											"key": "access_token",
+											"value": "{{access-token}}"
+										}
+									]
+								},
+								"description": "Returns metadata for an individual's account."
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Legacy API",
+					"item": [
+						{
+							"name": "Profile",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{battle-net-host}}/sc2/legacy/profile/{{sc2.region-id}}/{{sc2.realm-id}}/{{sc2.profile-id}}?locale={{locale}}&access_token={{access-token}}",
+									"host": [
+										"{{battle-net-host}}"
+									],
+									"path": [
+										"sc2",
+										"legacy",
+										"profile",
+										"{{sc2.region-id}}",
+										"{{sc2.realm-id}}",
+										"{{sc2.profile-id}}"
+									],
+									"query": [
+										{
+											"key": "locale",
+											"value": "{{locale}}",
+											"description": "The locale to reflect in localized data."
+										},
+										{
+											"key": "access_token",
+											"value": "{{access-token}}"
+										}
+									]
+								},
+								"description": "Retrieves data about an individual SC2 profile."
+							},
+							"response": []
+						},
+						{
+							"name": "Ladders",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{battle-net-host}}/sc2/legacy/profile/{{sc2.region-id}}/{{sc2.realm-id}}/{{sc2.profile-id}}/ladders?locale={{locale}}&access_token={{access-token}}",
+									"host": [
+										"{{battle-net-host}}"
+									],
+									"path": [
+										"sc2",
+										"legacy",
+										"profile",
+										"{{sc2.region-id}}",
+										"{{sc2.realm-id}}",
+										"{{sc2.profile-id}}",
+										"ladders"
+									],
+									"query": [
+										{
+											"key": "locale",
+											"value": "{{locale}}",
+											"description": "The locale to reflect in localized data."
+										},
+										{
+											"key": "access_token",
+											"value": "{{access-token}}"
+										}
+									]
+								},
+								"description": "Retrieves data about an individual SC2 profile's ladders."
+							},
+							"response": []
+						},
+						{
+							"name": "Match History",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{battle-net-host}}/sc2/legacy/profile/{{sc2.region-id}}/{{sc2.realm-id}}/{{sc2.profile-id}}/matches?locale={{locale}}&access_token={{access-token}}",
+									"host": [
+										"{{battle-net-host}}"
+									],
+									"path": [
+										"sc2",
+										"legacy",
+										"profile",
+										"{{sc2.region-id}}",
+										"{{sc2.realm-id}}",
+										"{{sc2.profile-id}}",
+										"matches"
+									],
+									"query": [
+										{
+											"key": "locale",
+											"value": "{{locale}}",
+											"description": "The locale to reflect in localized data."
+										},
+										{
+											"key": "access_token",
+											"value": "{{access-token}}"
+										}
+									]
+								},
+								"description": "Returns data about an individual SC2 profile's match history."
+							},
+							"response": []
+						},
+						{
+							"name": "Ladder",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{battle-net-host}}/sc2/legacy/ladder/{{sc2.region-id}}/{{sc2.ladder-id}}?locale={{locale}}&access_token={{access-token}}",
+									"host": [
+										"{{battle-net-host}}"
+									],
+									"path": [
+										"sc2",
+										"legacy",
+										"ladder",
+										"{{sc2.region-id}}",
+										"{{sc2.ladder-id}}"
+									],
+									"query": [
+										{
+											"key": "locale",
+											"value": "{{locale}}",
+											"description": "The locale to reflect in localized data."
+										},
+										{
+											"key": "access_token",
+											"value": "{{access-token}}"
+										}
+									]
+								},
+								"description": "Returns data about an individual SC2 ladder."
+							},
+							"response": []
+						},
+						{
+							"name": "Achievements",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{battle-net-host}}/sc2/legacy/data/achievements/{{sc2.region-id}}?locale={{locale}}&access_token={{access-token}}",
+									"host": [
+										"{{battle-net-host}}"
+									],
+									"path": [
+										"sc2",
+										"legacy",
+										"data",
+										"achievements",
+										"{{sc2.region-id}}"
+									],
+									"query": [
+										{
+											"key": "locale",
+											"value": "{{locale}}",
+											"description": "The locale to reflect in localized data."
+										},
+										{
+											"key": "access_token",
+											"value": "{{access-token}}"
+										}
+									]
+								},
+								"description": "Returns data about the achievements available in SC2."
+							},
+							"response": []
+						},
+						{
+							"name": "Rewards",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{battle-net-host}}/sc2/legacy/data/rewards/{{sc2.region-id}}?locale={{locale}}&access_token={{access-token}}",
+									"host": [
+										"{{battle-net-host}}"
+									],
+									"path": [
+										"sc2",
+										"legacy",
+										"data",
+										"rewards",
+										"{{sc2.region-id}}"
+									],
+									"query": [
+										{
+											"key": "locale",
+											"value": "{{locale}}",
+											"description": "The locale to reflect in localized data."
+										},
+										{
+											"key": "access_token",
+											"value": "{{access-token}}"
+										}
+									]
+								},
+								"description": "Returns data about the rewards available in SC2."
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				}
+			],
+			"description": "Endpoints for StarCraft II player profiles.\n\n**Hosts**: note that Blizzard API request paths follow this format: `{region}.api.blizzard.com/{API path}` (or `gateway.battlenet.com.cn/{API path}` for China). The requests below use the region parameter to set the host region in the **Try It** feature.\n\n**Note**: `{region}` does not affect StarCraft II responses, which use the `:regionId` parameter in requests. For more information, see the [Getting Started guide](https://develop.battle.net/documentation/guides/getting-started).\n\n**accountId**: `GET /player/{accountId}` requires a player's profile ID, which is retrieved via `GET /oauth/userinfo`. See the [Authorization Code Flow](https://develop.battle.net/documentation/guides/using-oauth/authorization-code-flow) and [OAuth APIs](https://develop.battle.net/documentation/api-reference/oauth-api) pages for more information.\n\n**regionId, realmId, and profileId**: retrieve these parameters via `GET /player/{accountId}`. For more information on region and realm IDs, see [Regionality, Partitions, and Localization](https://develop.battle.net/documentation/guides/regionality-partitions-and-localization)."
+		},
+		{
+			"name": "Game Data APIs",
+			"item": [
+				{
+					"name": "League Data",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{battle-net-host}}/data/sc2/league/{{sc2.season-id}}/{{sc2.queue-id}}/{{sc2.item-type-id}}/{{sc2.league-id}}?locale={{locale}}&access_token={{access-token}}",
+							"host": [
+								"{{battle-net-host}}"
+							],
+							"path": [
+								"data",
+								"sc2",
+								"league",
+								"{{sc2.season-id}}",
+								"{{sc2.queue-id}}",
+								"{{sc2.item-type-id}}",
+								"{{sc2.league-id}}"
+							],
+							"query": [
+								{
+									"key": "locale",
+									"value": "{{locale}}",
+									"description": "The locale to reflect in localized data."
+								},
+								{
+									"key": "access_token",
+									"value": "{{access-token}}"
+								}
+							]
+						},
+						"description": "Returns data for the specified season, queue, team, and league.\n\n**queueId**: the standard available queueIds are: 1=WoL 1v1, 2=WoL 2v2, 3=WoL 3v3, 4=WoL 4v4, 101=HotS 1v1, 102=HotS 2v2, 103=HotS 3v3, 104=HotS 4v4, 201=LotV 1v1, 202=LotV 2v2, 203=LotV 3v3, 204=LotV 4v4, 206=LotV Archon. Note that other available queues may not be listed here.\n\n**teamType**: there are two available teamTypes: 0=arranged, 1=random.\n\n**leagueId**: available leagueIds are: 0=Bronze, 1=Silver, 2=Gold, 3=Platinum, 4=Diamond, 5=Master, 6=Grandmaster."
+					},
+					"response": []
+				}
+			],
+			"description": "Endpoints for StarCraft II league data.\n\n**Hosts**: note that Blizzard API request paths follow this format: `{region}.api.blizzard.com/{API path}` (or gateway.battlenet.com.cn/{API path} for China). For more information, see the [Getting Started guide](https://develop.battle.net/documentation/guides/getting-started)."
+		}
+	]
+}
